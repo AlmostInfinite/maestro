@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudienceType : MonoBehaviour {
+[System.Serializable]
+public class AudienceType {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public string name;
+    public GameObject audienceVisualPrefab;
+
+    //TODO - Add any other audience type details to this class
+
 }

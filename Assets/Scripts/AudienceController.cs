@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class AudienceController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void OnTriggerEnter(Collider collision)
+    {
+        Debug.Log("Dead");
+
+        Destroy(transform.parent.gameObject);
+
+    }
+
+    //TODO - Move to seat?? - destroy object?? - (move "pawn" from unit make unit spawn from a pos instead.)
+
 }

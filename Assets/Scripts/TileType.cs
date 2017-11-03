@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileType : MonoBehaviour {
+/// <summary>
+/// Stores details about tile types.
+/// </summary>
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+[System.Serializable]
+public class TileType {
+
+    public string name;
+    public GameObject tileVisualPrefab;
+
+    public bool isTower = false;
+    public bool isWalkable = true;
+    public float movementCost = 1; //TODO Remove movement cost from pathing script?
+
 }
