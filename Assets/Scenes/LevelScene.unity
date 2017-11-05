@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -166,13 +166,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522877239}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 10.5, y: 20, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1015136173
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +304,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ebf264dffe866b4fae70df759813e4c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1328682489
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4941235043722540, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941235043722540, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941235043722540, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941235043722540, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941235043722540, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941235043722540, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941235043722540, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941235043722540, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1841596602
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +398,48 @@ MonoBehaviour:
     tileVisualPrefab: {fileID: 1735691066566660, guid: 0a4e0cf1f6ca13541a92a1c718d642d5,
       type: 2}
     isTower: 0
+    isWalkable: 0
+    movementCost: 0
+  - name: Tower1
+    tileVisualPrefab: {fileID: 1400528839258834, guid: 3ef8d0c957cb46349ba348f922e74291,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: Tower2
+    tileVisualPrefab: {fileID: 1347137592115590, guid: f8d0d237a9de7bc46b9b308a81ace7e1,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: Tower3
+    tileVisualPrefab: {fileID: 1721484373548364, guid: 84b56762f2297244584ef4408c2cd71a,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: Tower4
+    tileVisualPrefab: {fileID: 1883992964901368, guid: 6c4604317231ee34b9b310705c7423f5,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: Tower5
+    tileVisualPrefab: {fileID: 1299363454172694, guid: 6c08074d4eb799548ad1190917682f8f,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: TowerNodeTop
+    tileVisualPrefab: {fileID: 1434611627913724, guid: aa19bfa2d21019b40a88f9f86bfb8adf,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: TowerNodeBottom
+    tileVisualPrefab: {fileID: 1776161760401628, guid: fd311bb161cb3444db2d2aca04048908,
+      type: 2}
+    isTower: 1
     isWalkable: 0
     movementCost: 0
   mapSizeX: 16

@@ -47,15 +47,12 @@ public class LevelMapper : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-            Debug.Log(this.transform.position);
+
     }
 
 
     private void Awake()
     {
-
-
 
     }
 
@@ -84,13 +81,13 @@ public class LevelMapper : MonoBehaviour
 
                 GameObject go;
 
-                if (currentTileType.isTower) // check if tower and move by .5
+                if (currentTileType.isTower) // check if tower and set alignment.
                 {
 
-                    float xAdj = x + 0.5f; // used to centre tower tiles
-                    //float yAdj = z + 0.0f;
+                    float xAdj = x + 0.5f; // used to centre tower tiles in grid
+                    float yAdj = 0.0f; // moves tower on top of tiles(tower scales determine this height)
 
-                    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(xAdj, 0, z), currentTileType.tileVisualPrefab.transform.rotation); //Rotation of prefab
+                    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(xAdj, yAdj, z), currentTileType.tileVisualPrefab.transform.rotation); //Rotation of prefab
                 }
                 else
                 {
@@ -120,13 +117,261 @@ public class LevelMapper : MonoBehaviour
         // Allocate our map tiles
         tiles = new int[totalMapSizeX, totalMapSizeZ];
 
-        // int x, z;
-
         GenerateWalkableArea();
 
         GenerateBorderArea();
 
+        GenerateTowerNodes();
 
+        GenerateSeating();
+
+        GenerateBlockers();
+
+    }
+
+    private void GenerateBlockers()
+    {
+
+        //TODO Fix by creating a loop that imports from a file and stores seat posistion in variables 
+        // eg.
+
+        // type = seat (create ENUM for tile types)
+        // Read file to get towers amount
+        // loop while seats amount > 0
+        // read line -> posX
+        // read line -> posZ
+        // tiles[posX, posZ] = type;
+        // loop
+
+        //Hack
+
+        //Row Array starts at 0 (First row)
+
+        //Row 0
+        //None
+
+        //Row 1
+        //None
+
+        //Row 2
+        tiles[2 + leftBorder, 0 + bottomBorder] = 2;
+
+        //Row 3
+        //None
+
+        //Row 4
+        tiles[4 + leftBorder, 10 + bottomBorder] = 2;
+        tiles[4 + leftBorder, 5 + bottomBorder] = 2;
+
+        //Row 5
+        //None
+
+        //Row 6
+        tiles[6 + leftBorder, 10 + bottomBorder] = 2;
+        tiles[6 + leftBorder, 0 + bottomBorder] = 2;
+
+        //Row 7
+        //None
+
+        //Row 8
+        tiles[8 + leftBorder, 5 + bottomBorder] = 2;
+        tiles[8 + leftBorder, 0 + bottomBorder] = 2;
+
+        //Row 9
+        //None
+
+        //Row 10
+        tiles[10 + leftBorder, 10 + bottomBorder] = 2;
+        tiles[10 + leftBorder, 0 + bottomBorder] = 2;
+
+        //Row 11
+        //None
+
+        //Row 12
+        tiles[12 + leftBorder, 10 + bottomBorder] = 2;
+        tiles[12 + leftBorder, 5 + bottomBorder] = 2;
+
+
+        //Row 13
+        //None
+
+        //Row 14
+        //None
+
+        //Row 15
+        //None
+
+    }
+
+    private void GenerateSeating()
+    {
+        //TODO Fix by creating a loop that imports from a file and stores seat posistion in variables 
+        // eg.
+
+        // type = seat (create ENUM for tile types)
+        // Read file to get towers amount
+        // loop while seats amount > 0
+        // read line -> posX
+        // read line -> posZ
+        // tiles[posX, posZ] = type;
+        // loop
+
+        //Hack
+
+        //Row Array starts at 0
+
+        //Row 0
+        tiles[0 + leftBorder, 9 + bottomBorder] = 1;
+        tiles[0 + leftBorder, 8 + bottomBorder] = 1;
+        tiles[0 + leftBorder, 7 + bottomBorder] = 1;
+        tiles[0 + leftBorder, 6 + bottomBorder] = 1;
+        tiles[0 + leftBorder, 5 + bottomBorder] = 1;
+        tiles[0 + leftBorder, 4 + bottomBorder] = 1;
+        tiles[0 + leftBorder, 3 + bottomBorder] = 1;
+        tiles[0 + leftBorder, 2 + bottomBorder] = 1;
+        tiles[0 + leftBorder, 1 + bottomBorder] = 1;
+
+        //Row 1
+        //None
+
+        //Row 2
+        tiles[2 + leftBorder, 9 + bottomBorder] = 1;
+        tiles[2 + leftBorder, 8 + bottomBorder] = 1;
+        tiles[2 + leftBorder, 7 + bottomBorder] = 1;
+        tiles[2 + leftBorder, 6 + bottomBorder] = 1;
+        tiles[2 + leftBorder, 4 + bottomBorder] = 1;
+        tiles[2 + leftBorder, 3 + bottomBorder] = 1;
+        tiles[2 + leftBorder, 2 + bottomBorder] = 1;
+        tiles[2 + leftBorder, 1 + bottomBorder] = 1;
+
+        //Row 3
+        //None
+
+        //Row 4
+        tiles[4 + leftBorder, 9 + bottomBorder] = 1;
+        tiles[4 + leftBorder, 8 + bottomBorder] = 1;
+        tiles[4 + leftBorder, 7 + bottomBorder] = 1;
+        tiles[4 + leftBorder, 6 + bottomBorder] = 1;
+        tiles[4 + leftBorder, 4 + bottomBorder] = 1;
+        tiles[4 + leftBorder, 3 + bottomBorder] = 1;
+        tiles[4 + leftBorder, 2 + bottomBorder] = 1;
+        tiles[4 + leftBorder, 1 + bottomBorder] = 1;
+
+        //Row 5
+        //None
+
+        //Row 6
+        tiles[6 + leftBorder, 9 + bottomBorder] = 1;
+        tiles[6 + leftBorder, 8 + bottomBorder] = 1;
+        tiles[6 + leftBorder, 7 + bottomBorder] = 1;
+        tiles[6 + leftBorder, 6 + bottomBorder] = 1;
+        tiles[6 + leftBorder, 4 + bottomBorder] = 1;
+        tiles[6 + leftBorder, 3 + bottomBorder] = 1;
+        tiles[6 + leftBorder, 2 + bottomBorder] = 1;
+        tiles[6 + leftBorder, 1 + bottomBorder] = 1;
+
+        //Row 7
+        //None
+
+        //Row 8
+        tiles[8 + leftBorder, 9 + bottomBorder] = 1;
+        tiles[8 + leftBorder, 8 + bottomBorder] = 1;
+        tiles[8 + leftBorder, 7 + bottomBorder] = 1;
+        tiles[8 + leftBorder, 6 + bottomBorder] = 1;
+        tiles[8 + leftBorder, 4 + bottomBorder] = 1;
+        tiles[8 + leftBorder, 3 + bottomBorder] = 1;
+        tiles[8 + leftBorder, 2 + bottomBorder] = 1;
+        tiles[8 + leftBorder, 1 + bottomBorder] = 1;
+
+        //Row 9
+        //None
+
+        //Row 10
+        tiles[10 + leftBorder, 9 + bottomBorder] = 1;
+        tiles[10 + leftBorder, 8 + bottomBorder] = 1;
+        tiles[10 + leftBorder, 7 + bottomBorder] = 1;
+        tiles[10 + leftBorder, 6 + bottomBorder] = 1;
+        tiles[10 + leftBorder, 4 + bottomBorder] = 1;
+        tiles[10 + leftBorder, 3 + bottomBorder] = 1;
+        tiles[10 + leftBorder, 2 + bottomBorder] = 1;
+        tiles[10 + leftBorder, 1 + bottomBorder] = 1;
+
+        //Row 11
+        //None
+
+        //Row 12
+        tiles[12 + leftBorder, 9 + bottomBorder] = 1;
+        tiles[12 + leftBorder, 8 + bottomBorder] = 1;
+        tiles[12 + leftBorder, 7 + bottomBorder] = 1;
+        tiles[12 + leftBorder, 6 + bottomBorder] = 1;
+        tiles[12 + leftBorder, 4 + bottomBorder] = 1;
+        tiles[12 + leftBorder, 3 + bottomBorder] = 1;
+        tiles[12 + leftBorder, 2 + bottomBorder] = 1;
+        tiles[12 + leftBorder, 1 + bottomBorder] = 1;
+
+        //Row 13
+        //None
+
+        //Row 14
+        tiles[14 + leftBorder, 9 + bottomBorder] = 1;
+        tiles[14 + leftBorder, 8 + bottomBorder] = 1;
+        tiles[14 + leftBorder, 7 + bottomBorder] = 1;
+        tiles[14 + leftBorder, 6 + bottomBorder] = 1;
+        tiles[14 + leftBorder, 4 + bottomBorder] = 1;
+        tiles[14 + leftBorder, 3 + bottomBorder] = 1;
+        tiles[14 + leftBorder, 2 + bottomBorder] = 1;
+        tiles[14 + leftBorder, 1 + bottomBorder] = 1;
+
+        //Row 15
+        //None
+    }
+
+    private void GenerateTowerNodes()
+    {
+
+        //TODO Fix by creating a loop that imports from a file and stores node posistion and type in variables 
+        // eg.
+
+        // Read file to get towers amount
+        // loop while towers amount > 0
+        // read line -> posX
+        // read line -> posZ
+        // read line -> type
+        // tiles[posX, posZ] = type;
+        // loop
+
+
+        //HACK
+
+        //Tower Locations
+
+        //Tower1
+        tiles[1, 2] = 4;
+        //Tower2
+        tiles[1, 5] = 5;
+        //Tower3
+        tiles[1, 8] = 6;
+        //Tower4
+        tiles[1, 11] = 7;
+        //Tower5
+        tiles[1, 14] = 8;
+
+        //TowerNode1
+        tiles[0 + leftBorder, 12 + bottomBorder] = 9;
+        //TowerNode2
+        tiles[2 + leftBorder, 1] = 10;
+        //TowerNode3
+        tiles[4 + leftBorder, 12 + bottomBorder] = 9;
+        //TowerNode4
+        tiles[6 + leftBorder, 1] = 10;
+        //TowerNode5
+        tiles[8 + leftBorder, 12 + bottomBorder] = 9;
+        //TowerNode6
+        tiles[10 + leftBorder, 1] = 10;
+        //TowerNode7
+        tiles[12 + leftBorder, 12 + bottomBorder] = 9;
+        //TowerNode8
+        tiles[14 + leftBorder, 1] = 10;
 
     }
 
@@ -134,7 +379,7 @@ public class LevelMapper : MonoBehaviour
     {
 
         int x, z;
-        
+
         //Hack
         // Make a wall border area left
         for (x = 0; x < leftBorder; x++)

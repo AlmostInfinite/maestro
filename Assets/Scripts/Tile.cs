@@ -18,5 +18,4 @@ public class Tile : MonoBehaviour {
     public bool isVacant = true; // bool to check if tile is vacant
     public bool isSelected = false; // bool to check if tile has been clicked? maybe move to towers
 
-
 }
