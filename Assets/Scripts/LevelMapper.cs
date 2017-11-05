@@ -18,10 +18,9 @@ public class LevelMapper : MonoBehaviour
 
     // Array to store tile types
     public TileType[] tileTypes;
-
-
+    
     int[,] tiles;           //2 dimentional int array to store the tiles x and z(y) location.
-    //Node[,] graph;        //2 dimentional Node array to store the tiles x and z(y) location.
+    Node[,] graph;        //2 dimentional Node array to store the tiles x and z(y) location.
 
 
     //TODO saave numbers to a file and load on init.
@@ -66,43 +65,11 @@ public class LevelMapper : MonoBehaviour
         // Instaniates the map tiles/towers in their locations
         GenerateMapVisuals();
 
-
+        // Create a graph(array) that converts tiles to nodes and stores their positions and a nodes neighbor positions.
+        GeneratePathfindingGraph();
 
     }
-
-    private void GenerateMapVisuals()
-    {
-
-        for (int x = 0; x < totalMapSizeX; x++)
-        {
-            for (int z = 0; z < totalMapSizeZ; z++)
-            {
-                TileType currentTileType = tileTypes[tiles[x, z]];
-
-                GameObject go;
-
-                if (currentTileType.isTower) // check if tower and set alignment.
-                {
-
-                    float xAdj = x + 0.5f; // used to centre tower tiles in grid
-                    float yAdj = 0.0f; // moves tower on top of tiles(tower scales determine this height)
-
-                    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(xAdj, yAdj, z), currentTileType.tileVisualPrefab.transform.rotation); //Rotation of prefab
-                }
-                else
-                {
-                    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(x, 0, z), Quaternion.identity); //Quaternion.identity disables any rotation
-                }
-
-                // Set tile params
-                Tile currentTile = go.GetComponent<Tile>();
-                currentTile.tileX = x;
-                currentTile.tileZ = z;
-                //ct.map = this; not needed??
-
-            }
-        }
-    }
+      
 
     private void CalculateMapSize()
     {
@@ -127,77 +94,62 @@ public class LevelMapper : MonoBehaviour
 
     }
 
-    private void GenerateBlockers()
+    private void GenerateWalkableArea()
     {
 
-        //TODO Fix by creating a loop that imports from a file and stores seat posistion in variables 
-        // eg.
+        // Initialize our walkable tiled area
+        for (int x = 0; x < totalMapSizeX; x++)
+        {
+            for (int z = 0; z < totalMapSizeZ; z++)
+            {
+                tiles[x, z] = 0;
+            }
+        }
 
-        // type = seat (create ENUM for tile types)
-        // Read file to get towers amount
-        // loop while seats amount > 0
-        // read line -> posX
-        // read line -> posZ
-        // tiles[posX, posZ] = type;
-        // loop
+    }
+
+    private void GenerateBorderArea()
+    {
+
+        int x, z;
 
         //Hack
+        // Make a wall border area left
+        for (x = 0; x < leftBorder; x++)
+        {
+            for (z = 0; z < totalMapSizeZ; z++)
+            {
+                tiles[x, z] = 3;
+            }
+        }
 
-        //Row Array starts at 0 (First row)
-
-        //Row 0
-        //None
-
-        //Row 1
-        //None
-
-        //Row 2
-        tiles[2 + leftBorder, 0 + bottomBorder] = 2;
-
-        //Row 3
-        //None
-
-        //Row 4
-        tiles[4 + leftBorder, 10 + bottomBorder] = 2;
-        tiles[4 + leftBorder, 5 + bottomBorder] = 2;
-
-        //Row 5
-        //None
-
-        //Row 6
-        tiles[6 + leftBorder, 10 + bottomBorder] = 2;
-        tiles[6 + leftBorder, 0 + bottomBorder] = 2;
-
-        //Row 7
-        //None
-
-        //Row 8
-        tiles[8 + leftBorder, 5 + bottomBorder] = 2;
-        tiles[8 + leftBorder, 0 + bottomBorder] = 2;
-
-        //Row 9
-        //None
-
-        //Row 10
-        tiles[10 + leftBorder, 10 + bottomBorder] = 2;
-        tiles[10 + leftBorder, 0 + bottomBorder] = 2;
-
-        //Row 11
-        //None
-
-        //Row 12
-        tiles[12 + leftBorder, 10 + bottomBorder] = 2;
-        tiles[12 + leftBorder, 5 + bottomBorder] = 2;
+        // Make a wall border area right
+        for (x = totalMapSizeX - rightBorder; x < totalMapSizeX; x++)
+        {
+            for (z = 0; z < totalMapSizeZ; z++)
+            {
+                tiles[x, z] = 3;
+            }
+        }
 
 
-        //Row 13
-        //None
+        // Make a wall border area bottom
+        for (z = 0; z < bottomBorder; z++)
+        {
+            for (x = 0; x < totalMapSizeX; x++)
+            {
+                tiles[x, z] = 3;
+            }
+        }
 
-        //Row 14
-        //None
-
-        //Row 15
-        //None
+        // Make a wall border area top
+        for (z = totalMapSizeZ - topBorder; z < totalMapSizeZ; z++)
+        {
+            for (x = 0; x < totalMapSizeX; x++)
+            {
+                tiles[x, z] = 3;
+            }
+        }
 
     }
 
@@ -324,6 +276,80 @@ public class LevelMapper : MonoBehaviour
         //None
     }
 
+    private void GenerateBlockers()
+    {
+
+        //TODO Fix by creating a loop that imports from a file and stores seat posistion in variables 
+        // eg.
+
+        // type = seat (create ENUM for tile types)
+        // Read file to get towers amount
+        // loop while seats amount > 0
+        // read line -> posX
+        // read line -> posZ
+        // tiles[posX, posZ] = type;
+        // loop
+
+        //Hack
+
+        //Row Array starts at 0 (First row)
+
+        //Row 0
+        //None
+
+        //Row 1
+        //None
+
+        //Row 2
+        tiles[2 + leftBorder, 0 + bottomBorder] = 2;
+
+        //Row 3
+        //None
+
+        //Row 4
+        tiles[4 + leftBorder, 10 + bottomBorder] = 2;
+        tiles[4 + leftBorder, 5 + bottomBorder] = 2;
+
+        //Row 5
+        //None
+
+        //Row 6
+        tiles[6 + leftBorder, 10 + bottomBorder] = 2;
+        tiles[6 + leftBorder, 0 + bottomBorder] = 2;
+
+        //Row 7
+        //None
+
+        //Row 8
+        tiles[8 + leftBorder, 5 + bottomBorder] = 2;
+        tiles[8 + leftBorder, 0 + bottomBorder] = 2;
+
+        //Row 9
+        //None
+
+        //Row 10
+        tiles[10 + leftBorder, 10 + bottomBorder] = 2;
+        tiles[10 + leftBorder, 0 + bottomBorder] = 2;
+
+        //Row 11
+        //None
+
+        //Row 12
+        tiles[12 + leftBorder, 10 + bottomBorder] = 2;
+        tiles[12 + leftBorder, 5 + bottomBorder] = 2;
+
+
+        //Row 13
+        //None
+
+        //Row 14
+        //None
+
+        //Row 15
+        //None
+
+    }
+
     private void GenerateTowerNodes()
     {
 
@@ -372,68 +398,122 @@ public class LevelMapper : MonoBehaviour
         tiles[14 + leftBorder, 1] = 10;
 
     }
-
-    private void GenerateBorderArea()
+  
+    private void GenerateMapVisuals()
     {
 
-        int x, z;
-
-        //Hack
-        // Make a wall border area left
-        for (x = 0; x < leftBorder; x++)
-        {
-            for (z = 0; z < totalMapSizeZ; z++)
-            {
-                tiles[x, z] = 3;
-            }
-        }
-
-        // Make a wall border area right
-        for (x = totalMapSizeX - rightBorder; x < totalMapSizeX; x++)
-        {
-            for (z = 0; z < totalMapSizeZ; z++)
-            {
-                tiles[x, z] = 3;
-            }
-        }
-
-
-        // Make a wall border area bottom
-        for (z = 0; z < bottomBorder; z++)
-        {
-            for (x = 0; x < totalMapSizeX; x++)
-            {
-                tiles[x, z] = 3;
-            }
-        }
-
-        // Make a wall border area top
-        for (z = totalMapSizeZ - topBorder; z < totalMapSizeZ; z++)
-        {
-            for (x = 0; x < totalMapSizeX; x++)
-            {
-                tiles[x, z] = 3;
-            }
-        }
-
-    }
-
-    private void GenerateWalkableArea()
-    {
-
-        // Initialize our walkable tiled area
         for (int x = 0; x < totalMapSizeX; x++)
         {
             for (int z = 0; z < totalMapSizeZ; z++)
             {
-                tiles[x, z] = 0;
+                TileType currentTileType = tileTypes[tiles[x, z]];
+
+                GameObject go;
+
+                if (currentTileType.isTower) // check if tower and set alignment.
+                {
+
+                    float xAdj = x + 0.5f; // used to centre tower tiles in grid
+                    float yAdj = 0.0f; // moves tower on top of tiles(tower scales determine this height)
+
+                    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(xAdj, yAdj, z), currentTileType.tileVisualPrefab.transform.rotation); //Rotation of prefab
+                }
+                else
+                {
+                    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(x, 0, z), Quaternion.identity); //Quaternion.identity disables any rotation
+                }
+
+                // Set tile params
+                Tile currentTile = go.GetComponent<Tile>();
+                currentTile.tileX = x;
+                currentTile.tileZ = z;
+                //ct.map = this; not needed??
+
+            }
+        }
+    }
+    
+    private void GeneratePathfindingGraph()
+    {
+       
+        // TODO only create graph for walkable area using border variables
+        
+        // Initialize the array
+        graph = new Node[totalMapSizeX, totalMapSizeZ];
+
+        // Initialize a Node for each spot in the array
+        for (int x = 0; x < totalMapSizeX; x++)
+        {
+            for (int z = 0; z < totalMapSizeZ; z++)
+            {
+                graph[x, z] = new Node
+                {
+                    x = x,
+                    z = z
+                };
             }
         }
 
+        // Now that all the nodes exist, calculate their neighbours
+        for (int x = 0; x < totalMapSizeX; x++)
+        {
+            for (int z = 0; z < totalMapSizeZ; z++)
+            {
+
+                // This is the 4-way connection version:
+                if (x > 0)
+                    graph[x, z].neighbours.Add(graph[x - 1, z]);
+                if (x < totalMapSizeX - 1)
+                    graph[x, z].neighbours.Add(graph[x + 1, z]);
+                if (z > 0)
+                    graph[x, z].neighbours.Add(graph[x, z - 1]);
+                if (z < totalMapSizeZ - 1)
+                    graph[x, z].neighbours.Add(graph[x, z + 1]);
+
+
+                // This is the 8-way connection version (allows diagonal movement)
+                // Try left
+                //if(x > 0) {
+                //	graph[x,z].neighbours.Add( graph[x-1, z] );
+                //	if(z > 0)
+                //		graph[x,z].neighbours.Add( graph[x-1, z-1] );
+                //	if(z < totalMapSizeY-1)
+                //		graph[x,z].neighbours.Add( graph[x-1, z+1] );
+                //}
+
+                //// Try Right
+                //if(x < totalMapSizeX-1) {
+                //	graph[x,z].neighbours.Add( graph[x+1, z] );
+                //	if(z > 0)
+                //		graph[x,z].neighbours.Add( graph[x+1, z-1] );
+                //	if(z < totalMapSizeY-1)
+                //		graph[x,z].neighbours.Add( graph[x+1, z+1] );
+                //}
+
+                //// Try straight up and down
+                //if(z > 0)
+                //	graph[x,z].neighbours.Add( graph[x, z-1] );
+                //if(z < totalMapSizeY-1)
+                //	graph[x,z].neighbours.Add( graph[x, z+1] );
+
+                // This also works with 6-way hexes and n-way variable areas (like EU4)
+            }
+        }
+
+        ////For Debugging graph data
+
+        //if (graph.Length > 0)
+        //{
+        //    Debug.Log(graph.Length);
+        //    int graphX = graph[0, 1].neighbours.Count; // Check how many neighbours the tile at graph[x,z] has
+        //    Debug.Log(graphX);
+        //}
+        //else
+        //{ Debug.Log(graph.Length); }
+
+        ////End Debugging
+
     }
-
-
-
 
 
 }

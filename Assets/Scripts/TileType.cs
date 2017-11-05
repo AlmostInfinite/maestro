@@ -7,7 +7,8 @@ using UnityEngine;
 /// </summary>
 
 [System.Serializable]
-public class TileType {
+public class TileType
+{
 
     public string name;
     public GameObject tileVisualPrefab;
