@@ -50,7 +50,6 @@ public class LevelMapper : MonoBehaviour
 
     }
 
-
     private void Awake()
     {
 
@@ -64,8 +63,9 @@ public class LevelMapper : MonoBehaviour
         // Generates the level map
         GenerateMapData();
 
-
+        // Instaniates the map tiles/towers in their locations
         GenerateMapVisuals();
+
 
 
     }
@@ -98,12 +98,11 @@ public class LevelMapper : MonoBehaviour
                 Tile currentTile = go.GetComponent<Tile>();
                 currentTile.tileX = x;
                 currentTile.tileZ = z;
-                //ct.map = this; not needed?
+                //ct.map = this; not needed??
 
             }
         }
     }
-
 
     private void CalculateMapSize()
     {
@@ -113,8 +112,7 @@ public class LevelMapper : MonoBehaviour
 
     private void GenerateMapData()
     {
-
-        // Allocate our map tiles
+        // Initiate our tiles array size
         tiles = new int[totalMapSizeX, totalMapSizeZ];
 
         GenerateWalkableArea();
