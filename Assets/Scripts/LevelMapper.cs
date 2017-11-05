@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 /// <summary>
 /// 
@@ -12,19 +13,21 @@ public class LevelMapper : MonoBehaviour
 
     // TODO - Single instance - loads/saves level layout - generates level layout, level data(nodes) - generates path(or create PathMapper script)??
 
-
     public GameObject spawnPosition;
     public GameObject spawnUnit;
 
     // Array to store tile types
     public TileType[] tileTypes;
-    
-    int[,] tiles;           //2 dimentional int array to store the tiles x and z(y) location.
-    Node[,] graph;        //2 dimentional Node array to store the tiles x and z(y) location.
 
+    int[,] tiles;           //2 dimentional int array to store the tiles x and z(y) location.
+    Node[,] graph;          //2 dimentional Node array to store the tiles x and z(y) location.
+
+    List<Node> mappedPath;  // List stored path generated for audience to take.
 
     //TODO saave numbers to a file and load on init.
-    // Map vaiables
+
+
+    // Map variables
 
     int leftBorder = 5;     // Use to move rows right(z).
     int rightBorder = 1;
@@ -39,9 +42,13 @@ public class LevelMapper : MonoBehaviour
     protected int totalMapSizeX;
     protected int totalMapSizeZ;
 
-    // Position to travel to
-    public int tileFinishX = 19;
-    public int tileFinishZ = 8;
+    // Position to start at - Set in inspector
+    public int tileSourceX = 20;
+    public int tileSourceZ = 8;
+
+    // Position to travel to - Set in inspector
+    public int tileTargetX = 5;
+    public int tileTargetZ = 3;
 
 
     private void Update()
@@ -68,8 +75,11 @@ public class LevelMapper : MonoBehaviour
         // Create a graph(array) that converts tiles to nodes and stores their positions and a nodes neighbor positions.
         GeneratePathfindingGraph();
 
+        // Generate a path from start to finish.
+        GeneratePathTo(tileTargetX, tileTargetZ);
+
     }
-      
+
 
     private void CalculateMapSize()
     {
@@ -398,7 +408,7 @@ public class LevelMapper : MonoBehaviour
         tiles[14 + leftBorder, 1] = 10;
 
     }
-  
+
     private void GenerateMapVisuals()
     {
 
@@ -432,12 +442,12 @@ public class LevelMapper : MonoBehaviour
             }
         }
     }
-    
+
     private void GeneratePathfindingGraph()
     {
-       
+
         // TODO only create graph for walkable area using border variables
-        
+
         // Initialize the array
         graph = new Node[totalMapSizeX, totalMapSizeZ];
 
@@ -515,5 +525,148 @@ public class LevelMapper : MonoBehaviour
 
     }
 
+    public void GeneratePathTo(int targetX, int targetZ)
+    {
+        // Clear out our unit's old path.
+        //selectedUnit.GetComponent<Unit>().currentPath = null;
+
+        //if (UnitCanEnterTile(x, y) == false)
+        //{
+        //    // We probably clicked on a mountain or something, so just quit out.
+        //    return;
+        //}
+
+        Dictionary<Node, float> distanceToNode = new Dictionary<Node, float>();
+        Dictionary<Node, Node> previousNode = new Dictionary<Node, Node>();
+
+        // Setup the que -- the list of nodes we haven't checked yet.
+        List<Node> unvisited = new List<Node>();
+
+        Node source = graph[
+                            tileSourceX,
+                            tileSourceZ
+                            ];
+
+        Node target = graph[
+                            targetX,
+                            targetZ
+                            ];
+
+        distanceToNode[source] = 0;
+        previousNode[source] = null;
+
+        //    // Initialize everything to have INFINITY distance,
+        //    // some nodes CAN'T be reached from the source,
+        //    // which would make INFINITY a reasonable value.
+
+        foreach (Node v in graph) // v represents each unvisited vertex in graph
+        {
+            if (v != source)
+            {
+                distanceToNode[v] = Mathf.Infinity;
+                previousNode[v] = null;
+            }
+
+            unvisited.Add(v);
+        }
+
+        while (unvisited.Count > 0)
+        {
+            // "closestV" is going to be the unvisited node with the smallest distance.
+            Node closestV = null;
+
+            foreach (Node possibleClosestV in unvisited)
+            {
+                if (closestV == null || distanceToNode[possibleClosestV] < distanceToNode[closestV])
+                {
+                    closestV = possibleClosestV;
+                }
+            }
+
+            if (closestV == target)
+            {
+                break;  // Exit the while loop!
+            }
+
+            unvisited.Remove(closestV);
+
+            foreach (Node v in closestV.neighbours)
+            {
+                //float alt = dist[u] + u.DistanceTo(v);
+                float alt = distanceToNode[closestV] + CostToEnterTile(closestV.x, closestV.z, v.x, v.z);
+                if (alt < distanceToNode[v])
+                {
+                    distanceToNode[v] = alt;
+                    previousNode[v] = closestV;
+                }
+            }
+        }
+
+        // If we get there, the either we found the shortest route
+        // to our target, or there is no route at ALL to our target.
+
+        if (previousNode[target] == null)
+        {
+            // No route between our target and the source
+            Debug.Log("Error No Route Found");
+            return;
+        }
+
+        mappedPath = new List<Node>();
+
+        Node curr = target;
+
+        // Step through the "previousNode" chain and add it to our path
+        while (curr != null)
+        {
+            mappedPath.Add(curr);
+            curr = previousNode[curr];
+        }
+
+        // Right now, mappedPath describes a route from out target to our source
+        // Invert it!
+
+        mappedPath.Reverse();
+
+        Debug.Log(mappedPath.Count);
+
+    }
+
+    private float CostToEnterTile(int sourceX, int sourceY, int targetX, int targetY)
+    {
+        TileType tt = tileTypes[tiles[targetX, targetY]];
+
+        if (UnitCanEnterTile(targetX, targetY) == false)
+            return Mathf.Infinity;
+
+        float cost = tt.movementCost;
+
+        if (sourceX != targetX && sourceY != targetY)
+        {
+            // We are moving diagonally!  Fudge the cost for tie-breaking
+            // Purely a cosmetic thing!
+            cost += 0.001f;
+        }
+
+        return cost;
+    }
+
+    private bool UnitCanEnterTile(int x, int y)
+    {
+        return tileTypes[tiles[x, y]].isWalkable;
+    }
+
+    public void GetMappedPath(GameObject audienceUnit)
+    {
+        // Sets audience members current path to the original mapped path.
+        audienceUnit.GetComponent<AudienceUnit>().currentPath = mappedPath;
+
+    }
+
+    public Vector3 TileCoordToWorldCoord(int x, int z)
+    {
+        return new Vector3(x, 0, z);
+    }
 
 }
+

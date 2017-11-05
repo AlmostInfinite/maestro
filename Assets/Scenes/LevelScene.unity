@@ -343,6 +343,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114241039217884342, guid: d5cd928f40229474aaa4391d3fdf1b81,
+        type: 2}
+      propertyPath: levelMapper
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
   m_IsPrefabParent: 0
@@ -355,6 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1841596604}
   - component: {fileID: 1841596603}
+  - component: {fileID: 1841596605}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -444,8 +450,10 @@ MonoBehaviour:
     movementCost: 0
   mapSizeX: 16
   mapSizeZ: 11
-  tileFinishX: 19
-  tileFinishZ: 8
+  tileSourceX: 20
+  tileSourceZ: 8
+  tileTargetX: 5
+  tileTargetZ: 3
 --- !u!4 &1841596604
 Transform:
   m_ObjectHideFlags: 0
@@ -459,3 +467,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841596605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841596602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb8b209a35f2124e882c27469007937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnUnit: {fileID: 1231821707504534, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
+  levelMapper: {fileID: 1841596603}
