@@ -50,10 +50,33 @@ public class LevelMapper : MonoBehaviour
     public int tileTargetX = 5;
     public int tileTargetZ = 3;
 
+    public Vector3 tileSourceXYZ;
+
 
     private void Update()
     {
 
+        // Draw our debug line showing the pathfinding!
+        // NOTE: This won't appear in the actual game view.
+
+        if (mappedPath != null)
+        {
+            int currNode = 0;
+
+            while (currNode < mappedPath.Count - 1)
+            {
+
+                Vector3 start = TileCoordToWorldCoord(mappedPath[currNode].x, mappedPath[currNode].z) +
+                    new Vector3(0, 0.5f, 0);
+                Vector3 end = TileCoordToWorldCoord(mappedPath[currNode + 1].x, mappedPath[currNode + 1].z) +
+                    new Vector3(0, 0.5f, 0);
+
+                Debug.DrawLine(start, end, Color.black, 0, true);
+
+                currNode++;
+            }
+
+        }
     }
 
     private void Awake()
@@ -65,6 +88,9 @@ public class LevelMapper : MonoBehaviour
     {
         // Calculates total map size including borders
         CalculateMapSize();
+
+        // Create a Vector3 for the spawn point
+        tileSourceXYZ = TileCoordToWorldCoord(tileSourceX, tileSourceZ);
 
         // Generates the level map
         GenerateMapData();
@@ -527,14 +553,6 @@ public class LevelMapper : MonoBehaviour
 
     public void GeneratePathTo(int targetX, int targetZ)
     {
-        // Clear out our unit's old path.
-        //selectedUnit.GetComponent<Unit>().currentPath = null;
-
-        //if (UnitCanEnterTile(x, y) == false)
-        //{
-        //    // We probably clicked on a mountain or something, so just quit out.
-        //    return;
-        //}
 
         Dictionary<Node, float> distanceToNode = new Dictionary<Node, float>();
         Dictionary<Node, Node> previousNode = new Dictionary<Node, Node>();
@@ -548,7 +566,7 @@ public class LevelMapper : MonoBehaviour
                             ];
 
         Node target = graph[
-                            targetX,
+                            targetX, //use spublic values
                             targetZ
                             ];
 
@@ -628,11 +646,9 @@ public class LevelMapper : MonoBehaviour
 
         mappedPath.Reverse();
 
-        Debug.Log(mappedPath.Count);
-
     }
 
-    private float CostToEnterTile(int sourceX, int sourceY, int targetX, int targetY)
+    public float CostToEnterTile(int sourceX, int sourceY, int targetX, int targetY)
     {
         TileType tt = tileTypes[tiles[targetX, targetY]];
 

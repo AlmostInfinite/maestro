@@ -6,7 +6,8 @@ using UnityEngine;
 /// 
 /// </summary>
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     // TODO - Stores game information(score, level info, etc) - loads/saves game info?? - Single Instance
 
