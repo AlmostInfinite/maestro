@@ -13,10 +13,12 @@ public class TowerController : MonoBehaviour
 
 
     public float bulletSpeed = 10;
-    public Rigidbody bullet;
+    public Rigidbody bulletPrefab;
 
     public Transform bulletSpawn;
     public Tower tower;
+
+    
 
     
     // TODO Move mouseup to manager and create functions for selecting and deselecting a tower.
@@ -42,6 +44,7 @@ public class TowerController : MonoBehaviour
                 GetComponent<MeshRenderer>().material.SetTexture("_MainTex", null);
                 Debug.Log("Not Selected");
                 //set type selcted variable to nothing(create one)
+                //TowerManager.selectedType = LevelMapper.instance.tileTypes[0];
             }
             else
             {
@@ -49,6 +52,7 @@ public class TowerController : MonoBehaviour
                 GetComponent<MeshRenderer>().material.SetTexture("_MainTex", tower.textureSelected);
                 Debug.Log("Selected");
                 //set type selcted variable tower/tile type(create one)
+                //TowerManager.selectedType = LevelMapper.instance.tileTypes[1];
             }
         }
     }
@@ -56,7 +60,10 @@ public class TowerController : MonoBehaviour
 
     void Fire()
     {
-        Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, bulletSpawn.position, transform.rotation);
+
+        //checked tower type, set bulletPrefab to approbraite prefab for that tower before shooting.
+
+        Rigidbody bulletClone = (Rigidbody)Instantiate(bulletPrefab, bulletSpawn.position, transform.rotation);
         bulletClone.velocity = bulletSpawn.forward * bulletSpeed;
     }
 

@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     // TODO - Stores game information(score, level info, etc) - loads/saves game info?? - Single Instance
 
     public static GameManager instance = null;
-    private LevelMapper levelMapper;
+    //private LevelMapper levelMapper;
+
 
 
     //Awake is always called before any Start functions
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         //Get a component reference to the attached BoardManager script
-        levelMapper = GetComponent<LevelMapper>(); // boardScript - Remove Comment_
+       // levelMapper = GetComponent<LevelMapper>(); // boardScript - Remove Comment_
 
         //Call the InitGame function to initialize the first level 
         InitGame();

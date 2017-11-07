@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 33346385658454266}
   - component: {fileID: 65046511183509476}
   - component: {fileID: 23116710370395938}
-  - component: {fileID: 114609813325655238}
+  - component: {fileID: 114849450809741892}
+  - component: {fileID: 114011613483037574}
   m_Layer: 0
   m_Name: Tower3
   m_TagString: Tower
@@ -94,7 +95,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114609813325655238
+--- !u!114 &114011613483037574
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -102,7 +103,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1721484373548364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d852a8ce4031331418ceeb15963c3058, type: 3}
+  m_Script: {fileID: 11500000, guid: 92a87b69296c0f84e88c9f8c8b84bb8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 10
+  bulletPrefab: {fileID: 0}
+  bulletSpawn: {fileID: 0}
+  tower: {fileID: 114849450809741892}
+--- !u!114 &114849450809741892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1721484373548364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a41d38af9bcb649b276abac7d7e069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tileX: 0
@@ -110,3 +126,5 @@ MonoBehaviour:
   levelMap: {fileID: 0}
   isVacant: 1
   isSelected: 0
+  isNode: 0
+  textureSelected: {fileID: 2800000, guid: fb13f9714b95d614185b82a161afee76, type: 3}
