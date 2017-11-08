@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114011613483037574}
   m_Layer: 0
   m_Name: Tower3
-  m_TagString: Tower
+  m_TagString: Tower3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1721484373548364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,6 +110,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   bulletSpawn: {fileID: 0}
   tower: {fileID: 114849450809741892}
+  materials: []
 --- !u!114 &114849450809741892
 MonoBehaviour:
   m_ObjectHideFlags: 1

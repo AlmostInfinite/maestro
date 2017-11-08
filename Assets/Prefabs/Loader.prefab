@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4623835139127686}
   - component: {fileID: 114368710903516966}
+  - component: {fileID: 114975195866214842}
   m_Layer: 0
   m_Name: Loader
   m_TagString: Untagged
@@ -55,3 +56,14 @@ MonoBehaviour:
     type: 2}
   audioManager: {fileID: 1074341245063466, guid: d861d5617dcff7a4592f7852047583bc,
     type: 2}
+--- !u!114 &114975195866214842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767359597107808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2c278973f497c4ab00cd98e18c2d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

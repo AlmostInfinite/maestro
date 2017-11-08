@@ -7,7 +7,10 @@ public class SceneManagerScript : MonoBehaviour
 {
     public void LoadLevel(string LeveltoLoad)
     {
+
         SceneManager.LoadScene(LeveltoLoad);
+
+        AudioManager.instance.musicSource.Stop();
 
     }
 

@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tower
+  - Tower1
+  - Tower3
+  - Tower4
+  - Tower5
+  - Tower2
   layers:
   - Default
   - TransparentFX
