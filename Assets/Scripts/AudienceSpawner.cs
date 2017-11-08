@@ -34,6 +34,9 @@ public class AudienceSpawner : MonoBehaviour
         //    levelMapper.GetMappedPath(gos[i]);
         //}
 
+
+
+
     }
 
 
