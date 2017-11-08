@@ -136,7 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 54059023033987240, guid: 3b9d95e75289b054a8d2b52207d813ae,
+    type: 2}
   bulletSpawn: {fileID: 4084072199055764}
   tower: {fileID: 114850491014959052}
 --- !u!114 &114850491014959052
@@ -153,7 +154,7 @@ MonoBehaviour:
   tileX: 0
   tileZ: 0
   levelMap: {fileID: 0}
-  isVacant: 1
+  isVacant: 0
   isSelected: 0
   isNode: 1
   textureSelected: {fileID: 2800000, guid: fb13f9714b95d614185b82a161afee76, type: 3}
