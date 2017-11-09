@@ -16,6 +16,8 @@ public class LevelMapper : MonoBehaviour
 
     public GameObject spawnPosition;
     public GameObject spawnUnit;
+	public GameObject BackWall;
+
 
     // Array to store tile types
     public TileType[] tileTypes;
@@ -366,14 +368,14 @@ public class LevelMapper : MonoBehaviour
         //None
 
         //Row 6
-        tiles[6 + leftBorder, 10 + bottomBorder] = 2;
-        tiles[6 + leftBorder, 0 + bottomBorder] = 2;
+        tiles[6 + leftBorder, 10 + bottomBorder] = 0;
+        tiles[6 + leftBorder, 0 + bottomBorder] = 0;
 
         //Row 7
         //None
 
         //Row 8
-        tiles[8 + leftBorder, 5 + bottomBorder] = 2;
+        tiles[8 + leftBorder, 5 + bottomBorder] = 0;
         tiles[8 + leftBorder, 0 + bottomBorder] = 2;
 
         //Row 9
@@ -472,7 +474,7 @@ public class LevelMapper : MonoBehaviour
                 }
                 else
                 {
-                    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(x, 0, z), Quaternion.identity); //Quaternion.identity disables any rotation
+					go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(x, 0, z), Quaternion.identity,transform); //Quaternion.identity disables any rotation
                 }
 
                 // Set tile params
@@ -483,6 +485,8 @@ public class LevelMapper : MonoBehaviour
 
             }
         }
+		Instantiate(BackWall, new Vector3((totalMapSizeX/2), 0, totalMapSizeZ), BackWall.transform.rotation,transform);
+
     }
 
     private void GeneratePathfindingGraph()
