@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     //private LevelMapper levelMapper;
 
+    public int selectedTowerType = 0;
+    public GameObject towerToPlace;
 
 
     //Awake is always called before any Start functions

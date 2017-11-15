@@ -38,7 +38,7 @@ public class Loader : MonoBehaviour
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)
 
             //Load Menu Scene
-            UnityEngine.SceneManagement.SceneManager.LoadScene("LevelScene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 
     }
 

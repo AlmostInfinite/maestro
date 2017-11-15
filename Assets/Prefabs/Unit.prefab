@@ -140,7 +140,7 @@ MonoBehaviour:
   levelMapper: {fileID: 0}
   tileX: 20
   tileZ: 8
-  moveSpeed: 4.5
+  moveSpeed: 3.9
 --- !u!114 &114758172310180086
 MonoBehaviour:
   m_ObjectHideFlags: 1
