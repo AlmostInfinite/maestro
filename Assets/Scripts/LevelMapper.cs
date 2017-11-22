@@ -472,11 +472,15 @@ public class LevelMapper : MonoBehaviour
 
                     go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(xAdj, yAdj, z), currentTileType.tileVisualPrefab.transform.rotation); //Rotation of prefab
                 }
+                else if(currentTileType.name == "Seat")
+                {
+                    //HACK fix model height
+                    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(x, 0.2f, z), currentTileType.tileVisualPrefab.transform.rotation, transform); //Quaternion.identity disables any rotation
+                }
                 else
                 {
-					go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(x, 0, z), Quaternion.identity,transform); //Quaternion.identity disables any rotation
+                    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(x, 0, z), currentTileType.tileVisualPrefab.transform.rotation, transform); //Quaternion.identity disables any rotation
                 }
-
                 // Set tile params
                 Tile currentTile = go.GetComponent<Tile>();
                 currentTile.tileX = x;

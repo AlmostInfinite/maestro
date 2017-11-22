@@ -56,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d08e1591a86be0e45a994c3df762f5af, type: 2}
+  - {fileID: 2100000, guid: 6166372d9c486534a9648210f8399857, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,4 +111,3 @@ MonoBehaviour:
   tileZ: 0
   levelMap: {fileID: 0}
   isVacant: 1
-  isSelected: 0
