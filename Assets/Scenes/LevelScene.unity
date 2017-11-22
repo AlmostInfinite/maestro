@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -86,7 +86,8 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 70b8e80c9c8fec24a9ffde79e4565859,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -371,7 +372,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: feec0a3fc3eaced438510331d500c506, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -789,7 +790,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1015136173}
   m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 10.5, y: 17, z: 1.8}
+  m_LocalPosition: {x: 10.5, y: 17, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1105,7 +1106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 0}
   spawnUnit: {fileID: 0}
-  BackWall: {fileID: 1902313116450278, guid: 0c98ddab793533841827b007457d23f7, type: 2}
+  backWall: {fileID: 1902313116450278, guid: 0c98ddab793533841827b007457d23f7, type: 2}
+  leftWall: {fileID: 1725905056138824, guid: beef039dd0e65e8409b43717039df38f, type: 2}
+  rightWall: {fileID: 1352176020814870, guid: f1678c92fab86aa4aa5f1c24ca08b347, type: 2}
   tileTypes:
   - name: Aisle
     tileVisualPrefab: {fileID: 1603533807202702, guid: 47ae8a1988dde7f43884268bef16df43,

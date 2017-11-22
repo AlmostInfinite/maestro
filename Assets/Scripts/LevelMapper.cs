@@ -16,7 +16,7 @@ public class LevelMapper : MonoBehaviour
 
     public GameObject spawnPosition;
     public GameObject spawnUnit;
-	public GameObject BackWall;
+	public GameObject backWall, leftWall, rightWall;
 
 
     // Array to store tile types
@@ -485,7 +485,10 @@ public class LevelMapper : MonoBehaviour
 
             }
         }
-		Instantiate(BackWall, new Vector3((totalMapSizeX/2), 0, totalMapSizeZ), BackWall.transform.rotation,transform);
+        //TODO Move into seperate function
+        Instantiate(backWall, new Vector3((totalMapSizeX/2), 0, totalMapSizeZ), backWall.transform.rotation,transform);
+        Instantiate(leftWall, new Vector3((0), 0, totalMapSizeZ), leftWall.transform.rotation, transform);
+        Instantiate(rightWall, new Vector3((totalMapSizeX), 0, totalMapSizeZ), rightWall.transform.rotation, transform);
 
     }
 
