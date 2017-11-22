@@ -486,9 +486,9 @@ public class LevelMapper : MonoBehaviour
             }
         }
         //TODO Move into seperate function
-        Instantiate(backWall, new Vector3((totalMapSizeX/2), 0, totalMapSizeZ), backWall.transform.rotation,transform);
-        Instantiate(leftWall, new Vector3((0), 0, totalMapSizeZ), leftWall.transform.rotation, transform);
-        Instantiate(rightWall, new Vector3((totalMapSizeX), 0, totalMapSizeZ), rightWall.transform.rotation, transform);
+        Instantiate(backWall, new Vector3((totalMapSizeX/2), 5, (totalMapSizeZ - 0.5f)), backWall.transform.rotation,transform);
+        Instantiate(leftWall, new Vector3((0), 5, totalMapSizeZ), leftWall.transform.rotation, transform);
+        Instantiate(rightWall, new Vector3(((totalMapSizeX) - 0.5f), 5, totalMapSizeZ), rightWall.transform.rotation, transform);
 
     }
 
