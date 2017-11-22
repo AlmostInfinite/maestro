@@ -9,14 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/_PreLoadScene.unity
     guid: 303e79adba6585647bb562bce61f59e1
   - enabled: 1
-    path: Assets/Scenes/SplashScreen.unity
-    guid: 40d5f6f8054f5454ea2f001f3134250d
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9ae9ff905a956ae4fb4450b8c8fcb730
   - enabled: 1
     path: Assets/Scenes/LevelScene.unity
     guid: 6ecadcf8f876adf448e797acbab3da0f
-  - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: eb196d2684d02d94bbce6ea6e817daca
