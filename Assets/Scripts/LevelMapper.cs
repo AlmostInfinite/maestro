@@ -56,32 +56,6 @@ public class LevelMapper : MonoBehaviour
     public Vector3 tileSourceXYZ;
 
 
-    private void Update()
-    {
-
-        // Draw our debug line showing the pathfinding!
-        // NOTE: This won't appear in the actual game view.
-
-        if (mappedPath != null)
-        {
-            int currNode = 0;
-
-            while (currNode < mappedPath.Count - 1)
-            {
-
-                Vector3 start = TileCoordToWorldCoord(mappedPath[currNode].x, mappedPath[currNode].z) +
-                    new Vector3(0, 0.5f, 0);
-                Vector3 end = TileCoordToWorldCoord(mappedPath[currNode + 1].x, mappedPath[currNode + 1].z) +
-                    new Vector3(0, 0.5f, 0);
-
-                Debug.DrawLine(start, end, Color.black, 0, true);
-
-                currNode++;
-            }
-
-        }
-    }
-
     //Awake is always called before any Start functions
     void Awake()
     {
@@ -122,6 +96,33 @@ public class LevelMapper : MonoBehaviour
         // Generate a path from start to finish.
         GeneratePathTo(tileTargetX, tileTargetZ);
 
+    }
+
+
+    private void Update()
+    {
+
+        // Draw our debug line showing the pathfinding!
+        // NOTE: This won't appear in the actual game view.
+
+        if (mappedPath != null)
+        {
+            int currNode = 0;
+
+            while (currNode < mappedPath.Count - 1)
+            {
+
+                Vector3 start = TileCoordToWorldCoord(mappedPath[currNode].x, mappedPath[currNode].z) +
+                    new Vector3(0, 0.5f, 0);
+                Vector3 end = TileCoordToWorldCoord(mappedPath[currNode + 1].x, mappedPath[currNode + 1].z) +
+                    new Vector3(0, 0.5f, 0);
+
+                Debug.DrawLine(start, end, Color.black, 0, true);
+
+                currNode++;
+            }
+
+        }
     }
 
 
@@ -472,11 +473,11 @@ public class LevelMapper : MonoBehaviour
 
                     go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(xAdj, yAdj, z), currentTileType.tileVisualPrefab.transform.rotation); //Rotation of prefab
                 }
-                else if(currentTileType.name == "Seat")
-                {
+                //else if(currentTileType.name == "Seat")
+                //{
                     //HACK fix model height
-                    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(x, 0.2f, z), currentTileType.tileVisualPrefab.transform.rotation, transform); //Quaternion.identity disables any rotation
-                }
+                //    go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(x, 0.2f, z), currentTileType.tileVisualPrefab.transform.rotation, transform); //Quaternion.identity disables any rotation
+                //}
                 else
                 {
                     go = (GameObject)Instantiate(currentTileType.tileVisualPrefab, new Vector3(x, 0, z), currentTileType.tileVisualPrefab.transform.rotation, transform); //Quaternion.identity disables any rotation

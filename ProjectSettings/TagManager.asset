@@ -10,6 +10,7 @@ TagManager:
   - Tower4
   - Tower5
   - Tower2
+  - Seat
   layers:
   - Default
   - TransparentFX
