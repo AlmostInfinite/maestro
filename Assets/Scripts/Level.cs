@@ -2,7 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level : MonoBehaviour {
+public class Level : MonoBehaviour
+{
+    // TODO - loads/saves level layout - save map variables to a file and load on init.
+
+    public GameObject spawnPosition, spawnUnit, backWall, leftWall, rightWall;
+    
+    public int[,] tiles;
+
 
     // Map variables
 
@@ -27,7 +34,6 @@ public class Level : MonoBehaviour {
     public int tileTargetX = 5;
     public int tileTargetZ = 3;
 
-    public int[,] tiles;
 
     private void Start()
     {
@@ -44,11 +50,6 @@ public class Level : MonoBehaviour {
         // Hack
         LevelMapper.instance.tilesref = tiles;
 
-        Debug.Log(tiles.Length + " Level Class");
-        Debug.Log(LevelMapper.instance.tileSourceX + " Mapper Class");
-        Debug.Log(LevelMapper.instance.tileSourceZ + " Mapper Class");
-        Debug.Log(LevelMapper.instance.tilesref.Length + " Mapper Class");
-
         // Instaniates the map tiles/towers in their locations
         LevelMapper.instance.GenerateMapVisuals();
 
@@ -63,8 +64,8 @@ public class Level : MonoBehaviour {
 
     private void CalculateMapSize()
     {
-        totalMapSizeX = mapSizeX + leftBorder + rightBorder; //22
-        totalMapSizeZ = mapSizeZ + topBorder + bottomBorder; //17
+        totalMapSizeX = mapSizeX + leftBorder + rightBorder;
+        totalMapSizeZ = mapSizeZ + topBorder + bottomBorder;
         LevelMapper.instance.totalMapSizeX = totalMapSizeX;
         LevelMapper.instance.totalMapSizeZ = totalMapSizeZ;
     }
@@ -74,7 +75,7 @@ public class Level : MonoBehaviour {
         tiles = null;
 
         // Initiate our tiles array size
-        
+
         tiles = new int[totalMapSizeX, totalMapSizeZ];
 
         GenerateWalkableArea();
@@ -394,5 +395,5 @@ public class Level : MonoBehaviour {
         tiles[14 + leftBorder, 1] = 10;
 
     }
-    
+
 }
