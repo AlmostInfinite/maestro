@@ -59,6 +59,21 @@ public class LevelMapper : MonoBehaviour
     private void Update()
     {
 
+
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit hit;
+        ////Physics.Raycast(ray, out hit, 100);
+        //Vector3 hitOffset = new Vector3(0, -0.5f, 0);
+        //if (Physics.Raycast(ray, out hit, 200))
+        //    {
+        //    Debug.DrawLine(ray.origin, hit.point - hitOffset, Color.red);
+        //        //if (hit.collider.gameObject.CompareTag("Interactable")) //and not current object
+        //        //print(hit.collider.gameObject.name);
+        //        // set current object to what you are looking at
+        //        // else set current object found to nothing
+        //    }
+
+
         // Draw our debug line showing the pathfinding!
         // NOTE: This won't appear in the actual game view.
 

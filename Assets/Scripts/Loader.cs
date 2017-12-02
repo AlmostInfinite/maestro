@@ -31,6 +31,7 @@ public class Loader : MonoBehaviour
             levelMapper = Instantiate(levelMapper);
             levelMapper.name = "LevelMapper"; //Set LevelMapper GameObject name
         }
+
     }
 
 

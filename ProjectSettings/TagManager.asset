@@ -5,12 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tower
-  - Tower1
-  - Tower3
-  - Tower4
-  - Tower5
-  - Tower2
   - Seat
+  - TowerNode
   layers:
   - Default
   - TransparentFX
@@ -20,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Tiles
   - 
   - 
   - 

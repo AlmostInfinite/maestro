@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 33746685931997410}
   - component: {fileID: 23421415680344144}
   - component: {fileID: 114806896763233236}
-  m_Layer: 0
+  - component: {fileID: 64595877901050430}
+  m_Layer: 8
   m_Name: TileFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,6 +81,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951300942860834}
+  m_Mesh: {fileID: 4300000, guid: 51fd721c9d615f24faaf98f955f3d27a, type: 3}
+--- !u!64 &64595877901050430
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951300942860834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 51fd721c9d615f24faaf98f955f3d27a, type: 3}
 --- !u!114 &114806896763233236
 MonoBehaviour:

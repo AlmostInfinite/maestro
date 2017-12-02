@@ -6,34 +6,68 @@ using UnityEngine;
 /// 
 /// </summary>
 
-public class TowerManager : MonoBehaviour {
+public class TowerManager : MonoBehaviour
+{
 
 
     public static TileType selectedType;
 
-    //public static TowerManager instance = null;
+    public static TowerManager instance = null;
 
-    ////TODO manage tower node locations/ placement/ movement.  
+    public int selectedTowerType;
+
+    void Awake()
+    {
+        //Check if instance already exists
+        if (instance == null)
+
+            //if not, set instance to this
+            instance = this;
+
+        //If instance already exists and it's not this:
+        else if (instance != this)
+
+            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+            Destroy(gameObject);
+
+        //Sets this to not be destroyed when reloading scene
+        //DontDestroyOnLoad(gameObject);
 
 
-    ////Awake is always called before any Start functions
-    //void Awake()
-    //{
-    //    //Check if instance already exists
-    //    if (instance == null)
+    }
 
-    //        //if not, set instance to this
-    //        instance = this;
+    public void HandleTowerPlacement(GameObject selectedTower, GameObject targetTowerNode)
+    {
 
-    //    //If instance already exists and it's not this:
-    //    else if (instance != this)
+        selectedTowerType = selectedTower.GetComponent<Tower>().towerType;
 
-    //        //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-    //        Destroy(gameObject);
+        Color selectedColor;
 
-    //    //Sets this to not be destroyed when reloading scene
-    //    DontDestroyOnLoad(gameObject);
+        switch (selectedTowerType)
+        {
+            case 1:
+                selectedColor = Color.red;
+                break;
+            case 2:
+                selectedColor = Color.blue;
+                break;
+            case 3:
+                selectedColor = Color.yellow;
+                break;
+            case 4:
+                selectedColor = Color.green;
+                break;
+            case 5:
+                selectedColor = Color.cyan;
+                break;
+            default:
+                Debug.Log("Error");
+                return;
+        }
 
-    //}
+        targetTowerNode.GetComponentInChildren<MeshRenderer>().material.SetColor("_Color", selectedColor);
+        
+
+    }
 
 }

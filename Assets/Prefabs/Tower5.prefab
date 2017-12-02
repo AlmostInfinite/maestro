@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114713959699103878}
   - component: {fileID: 114731369831463988}
   - component: {fileID: 65257305094256628}
+  - component: {fileID: 114682481610390916}
   m_Layer: 0
   m_Name: Tower5
   m_TagString: Untagged
@@ -293,6 +294,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.1536434, y: 0.02665867, z: 2.1536434}
   m_Center: {x: 0, y: -0.09794645, z: 0}
+--- !u!114 &114682481610390916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1085880174116208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385eca3d6624b3744a66d36b7c438fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetItem: {fileID: 0}
+  myLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &114713959699103878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -308,9 +324,8 @@ MonoBehaviour:
   tileZ: 0
   levelMap: {fileID: 0}
   isVacant: 1
-  isSelected: 0
   isNode: 0
-  textureSelected: {fileID: 2800000, guid: fb13f9714b95d614185b82a161afee76, type: 3}
+  towerType: 5
 --- !u!114 &114731369831463988
 MonoBehaviour:
   m_ObjectHideFlags: 1
