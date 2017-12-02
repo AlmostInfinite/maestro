@@ -6,5 +6,7 @@ public class Tower : Tile {
 
     public bool isNode = false;
     public int towerType;
-   
+
+    public Rigidbody bulletPrefab;
+
 }

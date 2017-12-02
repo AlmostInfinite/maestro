@@ -69,7 +69,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4892275097409574}
   - component: {fileID: 114384005993447810}
-  - component: {fileID: 114696858696955290}
   - component: {fileID: 65159243874681120}
   - component: {fileID: 114912829484140066}
   m_Layer: 0
@@ -311,22 +310,8 @@ MonoBehaviour:
   isVacant: 1
   isNode: 0
   towerType: 3
---- !u!114 &114696858696955290
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1910741505759632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a87b69296c0f84e88c9f8c8b84bb8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 10
-  bulletPrefab: {fileID: 0}
-  bulletSpawn: {fileID: 0}
-  tower: {fileID: 114384005993447810}
-  materials: []
+  bulletPrefab: {fileID: 54173199785845972, guid: 102f7ee311d0435428ae39e962c77af0,
+    type: 2}
 --- !u!114 &114912829484140066
 MonoBehaviour:
   m_ObjectHideFlags: 1

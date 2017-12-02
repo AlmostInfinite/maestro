@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149086070287068}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0.25, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0.63, z: 1.5}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_Children: []
   m_Father: {fileID: 4374343154789410}
@@ -172,6 +172,7 @@ MonoBehaviour:
   isVacant: 1
   isNode: 1
   towerType: 0
+  bulletPrefab: {fileID: 0}
 --- !u!114 &114456325881782882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,8 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
-  bulletPrefab: {fileID: 54059023033987240, guid: 3b9d95e75289b054a8d2b52207d813ae,
-    type: 2}
   bulletSpawn: {fileID: 4754577936786382}
   tower: {fileID: 114093084865205870}
   materials: []

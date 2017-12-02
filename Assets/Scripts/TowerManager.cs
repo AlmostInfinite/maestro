@@ -66,7 +66,11 @@ public class TowerManager : MonoBehaviour
         }
 
         targetTowerNode.GetComponentInChildren<MeshRenderer>().material.SetColor("_Color", selectedColor);
-        
+        targetTowerNode.GetComponent<Tower>().towerType = selectedTowerType;
+        targetTowerNode.GetComponent<Tower>().bulletPrefab = selectedTower.GetComponent<Tower>().bulletPrefab;
+
+
+
 
     }
 
