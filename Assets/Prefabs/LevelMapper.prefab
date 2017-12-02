@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1545110847735098}
+  m_IsPrefabParent: 1
+--- !u!1 &1545110847735098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4843674662214906}
+  - component: {fileID: 114611193136672238}
+  m_Layer: 0
+  m_Name: LevelMapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4843674662214906
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545110847735098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.60713965, y: 0.8165209, z: -4.9467826}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114611193136672238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545110847735098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c0cd0cf406fa54281b281700a3f4fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {fileID: 0}
+  spawnUnit: {fileID: 0}
+  backWall: {fileID: 1581439040911970, guid: 710ddcc6b54604d43b2d69793daffef5, type: 2}
+  leftWall: {fileID: 1410594951472678, guid: af909b0a0fce44548954abf36d2781c5, type: 2}
+  rightWall: {fileID: 1463267843914624, guid: 25760afa2e7847a488628dbb71be852f, type: 2}
+  tileTypes:
+  - name: Aisle
+    tileVisualPrefab: {fileID: 1376405865564932, guid: 77a80fbc71c66054d96a90a9e5d0cf17,
+      type: 2}
+    isTower: 0
+    isWalkable: 1
+    movementCost: 0
+  - name: Seat
+    tileVisualPrefab: {fileID: 1046647325804010, guid: c0c127d3cb6fc5b4cb07a1b06cc5fad3,
+      type: 2}
+    isTower: 0
+    isWalkable: 0
+    movementCost: 0
+  - name: Blocker
+    tileVisualPrefab: {fileID: 1532534935856414, guid: d64b0a5e6bcb0d042a6b07d51ee656cb,
+      type: 2}
+    isTower: 0
+    isWalkable: 0
+    movementCost: 0
+  - name: Border
+    tileVisualPrefab: {fileID: 1951300942860834, guid: ad14cb0bb65734f4bb14e169069e2169,
+      type: 2}
+    isTower: 0
+    isWalkable: 0
+    movementCost: 0
+  - name: Tower1
+    tileVisualPrefab: {fileID: 1227814847302802, guid: fc4299b9fed3b6e4e9ce1a6c4b66871b,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: Tower2
+    tileVisualPrefab: {fileID: 1686346215473524, guid: 7ad780e4bb0ec144785f2cab24aa9ac0,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: Tower3
+    tileVisualPrefab: {fileID: 1910741505759632, guid: dae409484fefb9b4eb6e883e1c236a1b,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: Tower4
+    tileVisualPrefab: {fileID: 1007422380675644, guid: a51f7ed7a040bd64f84b73366f403fb2,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: Tower5
+    tileVisualPrefab: {fileID: 1085880174116208, guid: 5b603ad518152e043820963cf447076e,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: TowerNodeTop
+    tileVisualPrefab: {fileID: 1675854741550290, guid: 1d77d9240f2086e4cae8f20d13c0459e,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  - name: TowerNodeBottom
+    tileVisualPrefab: {fileID: 1448805084360042, guid: 368ad8a80c04cf841beeb6931d6b82fd,
+      type: 2}
+    isTower: 1
+    isWalkable: 0
+    movementCost: 0
+  totalMapSizeX: 0
+  totalMapSizeZ: 0
+  tileSourceX: 0
+  tileSourceZ: 0
+  tileSourceXYZ: {x: 0, y: 0, z: 0}

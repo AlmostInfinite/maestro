@@ -32,7 +32,7 @@ public class TowerController : MonoBehaviour
             {
 
                 // TODO tidy up
-                this.GetComponent<Renderer>().material = GameManager.instance.towerToPlace.GetComponent<Renderer>().material;
+                //this.GetComponent<Renderer>().material = GameManager.instance.towerToPlace.GetComponent<Renderer>().material;
 
                 // if tower type selected is not nothing set tower/tile type on node
                 //switch (GameManager.instance.selectedTowerType)
@@ -76,7 +76,7 @@ public class TowerController : MonoBehaviour
             if (tower.isSelected)
             {
                 tower.isSelected = false;
-                GetComponent<MeshRenderer>().material.SetTexture("_MainTex", null);
+                //GetComponent<MeshRenderer>().material.SetTexture("_MainTex", null);
                 Debug.Log("Not Selected");
                 //set type selcted variable to nothing(create one)
                 GameManager.instance.towerToPlace = null;
@@ -86,7 +86,7 @@ public class TowerController : MonoBehaviour
             else
             {
                 tower.isSelected = true;
-                GetComponent<MeshRenderer>().material.SetTexture("_MainTex", tower.textureSelected);
+                //GetComponent<MeshRenderer>().material.SetTexture("_MainTex", tower.textureSelected);
                 Debug.Log("Selected");
 
                 GameManager.instance.towerToPlace = this.gameObject;

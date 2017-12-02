@@ -278,6 +278,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4546139895778844}
+  - component: {fileID: 114410157089441634}
+  - component: {fileID: 114969418846289792}
   m_Layer: 0
   m_Name: New Podium 1
   m_TagString: Untagged
@@ -440,7 +442,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1775782782676398}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.15281476, z: 0}
+  m_LocalPosition: {x: -0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4546139895778844}
@@ -485,7 +487,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1248770803640368}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.56, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4383109414137370}
@@ -614,3 +616,38 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1242695755386504}
   m_Mesh: {fileID: 4300000, guid: 1da225123ef4c544491179ea9d30292c, type: 3}
+--- !u!114 &114410157089441634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920694201677378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a87b69296c0f84e88c9f8c8b84bb8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 10
+  bulletPrefab: {fileID: 54059023033987240, guid: 3b9d95e75289b054a8d2b52207d813ae,
+    type: 2}
+  bulletSpawn: {fileID: 4546139895778844}
+  tower: {fileID: 114969418846289792}
+  materials: []
+--- !u!114 &114969418846289792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920694201677378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a41d38af9bcb649b276abac7d7e069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileX: 0
+  tileZ: 0
+  levelMap: {fileID: 0}
+  isVacant: 1
+  isSelected: 0
+  isNode: 1
+  textureSelected: {fileID: 2800000, guid: fb13f9714b95d614185b82a161afee76, type: 3}

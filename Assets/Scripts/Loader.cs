@@ -6,7 +6,7 @@ public class Loader : MonoBehaviour
 {
     public GameObject gameManager;          //GameManager prefab to instantiate.
     public GameObject audioManager;         //SoundManager prefab to instantiate.
-
+    public GameObject levelMapper;          //LevelMapper prefab to instantiate.
 
     void Awake()
     {
@@ -23,6 +23,13 @@ public class Loader : MonoBehaviour
             //Instantiate SoundManager prefab
             audioManager = Instantiate(audioManager);
             audioManager.name = "AudioManager"; //Set AudioManager GameObject name
+        }
+
+        if (LevelMapper.instance == null)
+        {
+            //Instantiate SoundManager prefab
+            levelMapper = Instantiate(levelMapper);
+            levelMapper.name = "LevelMapper"; //Set LevelMapper GameObject name
         }
     }
 

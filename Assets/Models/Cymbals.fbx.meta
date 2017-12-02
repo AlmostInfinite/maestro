@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 32822b1bd5d6a434185d3d06e6d0c4b1
-timeCreated: 1511345816
-licenseType: Free
+guid: 559c2b7af5a3ee44998bde7dadecbe47
+timeCreated: 1511828162
+licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
@@ -9,17 +9,19 @@ ModelImporter:
     100002: group
     100004: pasted__pCylinder1
     100006: pCylinder1
+    100008: pCylinder2
+    100010: transform1
+    100012: transform2
     400000: //RootNode
     400002: group
     400004: pasted__pCylinder1
     400006: pCylinder1
-    2300000: pasted__pCylinder1
-    2300002: pCylinder1
-    3300000: pasted__pCylinder1
-    3300002: pCylinder1
-    4300000: pCylinder1
-    4300002: pasted__pCylinder1
-    9500000: //RootNode
+    400008: pCylinder2
+    400010: transform1
+    400012: transform2
+    2300000: pCylinder2
+    3300000: pCylinder2
+    4300000: pCylinder2
   materials:
     importMaterials: 1
     materialName: 0
@@ -89,7 +91,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
