@@ -27,6 +27,8 @@ public class AudienceUnit : MonoBehaviour
 
     // stores the current position on the path.
     private int currentPathNode = -1;
+
+    float waitTime = 2.222f;
     
     // Base Unit Stats
     public int HP; // Unit HP
@@ -63,6 +65,12 @@ public class AudienceUnit : MonoBehaviour
 
     void Update()
     {
+
+        if (waitTime >= 0)
+        {
+            waitTime -= Time.deltaTime;
+            return;
+        }
 
         //TODO Move movement into movement controller.
 

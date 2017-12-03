@@ -53,6 +53,7 @@ public class AudienceSpawner : MonoBehaviour
         waitTimeForWave = 3;
 
 
+
     }
 
     void Update()
@@ -98,7 +99,7 @@ public class AudienceSpawner : MonoBehaviour
             {
 
                 var unitToSpawn = waves[currentWave].RandomPrefab();
-
+                
                 Instantiate(unitToSpawn, LevelMapper.instance.tileSourceXYZ, unitToSpawn.transform.rotation);
 
                 yield return new WaitForSeconds(waves[currentWave].timeBetweenSpawns);

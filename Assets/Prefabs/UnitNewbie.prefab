@@ -137,12 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e98ef1392ed49409585855e6b7235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelMapper: {fileID: 0}
+  currentLevel: {fileID: 0}
   tileX: 0
   tileZ: 0
   HP: 1
   instrumentType: 0
-  moveSpeed: 3.9
+  moveSpeed: 3.8
 --- !u!114 &114343011300280114
 MonoBehaviour:
   m_ObjectHideFlags: 1
