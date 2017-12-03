@@ -326,6 +326,6 @@ MonoBehaviour:
   levelMap: {fileID: 0}
   isVacant: 1
   isNode: 0
-  towerType: 1
+  towerType: 0
   bulletPrefab: {fileID: 54599911249944182, guid: 6b29700980ce96d4bade001f9bd53e47,
     type: 2}

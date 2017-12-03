@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23796003135441624}
   - component: {fileID: 122350117296455532}
   - component: {fileID: 54173199785845972}
+  - component: {fileID: 114894576316787138}
   m_Layer: 0
   m_Name: ProjectileYellow
   m_TagString: Tower
@@ -110,6 +111,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114894576316787138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600226276606394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568529b2f2873654abf9fdf3cffe4e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileType: 2
 --- !u!122 &122350117296455532
 Halo:
   m_ObjectHideFlags: 1

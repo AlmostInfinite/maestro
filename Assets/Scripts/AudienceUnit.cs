@@ -14,7 +14,8 @@ public class AudienceUnit : MonoBehaviour
     public List<Node> currentPath = null;
 
     // Hack Create instance of levelmapper
-    public LevelMapper levelMapper;
+    //public LevelMapper levelMapper;
+    public Level currentLevel;
 
     // tileX and tileY represent the correct map-tile position
     // for this piece.  Note that this doesn't necessarily mean
@@ -26,9 +27,11 @@ public class AudienceUnit : MonoBehaviour
 
     // stores the current position on the path.
     private int currentPathNode = -1;
-
-    //float remainingMovement = 100;
-    public float moveSpeed = 4.0f; //How fast player moves, Increase to increase speed.
+    
+    // Base Unit Stats
+    public int HP; // Unit HP
+    public int instrumentType; // Instrument type used to kill unit and set color.
+    public float moveSpeed; //How fast unit moves, Increase to increase speed.
 
     bool move = true;
 
@@ -40,12 +43,21 @@ public class AudienceUnit : MonoBehaviour
     private void Start()
     {
 
-        levelMapper = FindObjectOfType<LevelMapper>();
+        currentLevel = FindObjectOfType<Level>();
 
-        levelMapper.GetMappedPath(gameObject);
+        LevelMapper.instance.GetMappedPath(gameObject);
 
-        tileX = levelMapper.tileSourceX;
-        tileZ = levelMapper.tileSourceZ;
+        tileX = LevelMapper.instance.tileSourceX;
+        tileZ = LevelMapper.instance.tileSourceZ;
+
+        instrumentType = currentLevel.unitsToSpawn[0];
+
+        currentLevel.unitsToSpawn.RemoveAt(0);
+
+        Color selectedColor = LevelMapper.instance.instrumentTypes[instrumentType].instrumentColor;
+
+        GetComponentInChildren<MeshRenderer>().material.SetColor("_Color", selectedColor);
+
 
     }
 
@@ -56,11 +68,11 @@ public class AudienceUnit : MonoBehaviour
 
         //// Have we moved our visible piece close enough to the target tile that we can
         //// advance to the next step in our pathfinding?
-        if (Vector3.Distance(transform.position, levelMapper.TileCoordToWorldCoord(tileX, tileZ)) < 0.1f)
+        if (Vector3.Distance(transform.position, LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ)) < 0.1f)
             AdvancePathing();
 
         // Smoothly animate towards the correct map tile.
-        transform.position = Vector3.Lerp(transform.position, levelMapper.TileCoordToWorldCoord(tileX, tileZ), moveSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ), moveSpeed * Time.deltaTime);
 
     }
 
@@ -78,7 +90,7 @@ public class AudienceUnit : MonoBehaviour
 
         // Teleport us to our correct "current" position, in case we
         // haven't finished the animation yet.
-        transform.position = levelMapper.TileCoordToWorldCoord(tileX, tileZ);
+        transform.position = LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ);
 
         // Move to the next tile in the sequence
 

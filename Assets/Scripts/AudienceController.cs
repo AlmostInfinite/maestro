@@ -8,7 +8,9 @@ public class AudienceController : MonoBehaviour {
     {
         Debug.Log("Dead");
 
+        if (collision.GetComponent<TowerProjectile>().projectileType == this.GetComponentInParent<AudienceUnit>().instrumentType)
         Destroy(transform.parent.gameObject);
+
 
     }
 

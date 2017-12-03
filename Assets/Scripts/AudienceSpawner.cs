@@ -36,50 +36,53 @@ public class AudienceSpawner : MonoBehaviour
     public int currentWave;
 
     public bool spawnEnabled;
-    //public float timeBetweenWaves;
+    public float timeBetweenWaves;
 
     private float waitTimeForWave;
     private bool spawning = false;
     private int lastWave = 0;
-    private int numInThisWave;
 
     public UnitWaveInfo[] waves;
 
+    protected GameManager gameManager;
+
     private void Start()
     {
-        waitTimeForWave = 0;
-        currentWave = 0;
+        gameManager = FindObjectOfType<GameManager>();
+
+        waitTimeForWave = 3;
+
 
     }
 
     void Update()
     {
 
-        //var units = GameObject.FindGameObjectsWithTag("Enemy");
+        var units = GameObject.FindGameObjectsWithTag("Enemy");
 
-        //if (units.Length == 0 & !spawning)
-        //{
+        if (units.Length == 0 & !spawning)
+        {
 
-        //    if (waitTimeForWave == timeBetweenWaves & spawnEnabled)
-        //    {
-        //        GameManager.instance.UpdateWaveInfoText("Wave " + (lastWave) + " Complete!"); // Only display once between waves.
-        //    }
+            if (waitTimeForWave == timeBetweenWaves & spawnEnabled)
+            {
+                //GameManager.instance.UpdateWaveInfoText("Wave " + (lastWave) + " Complete!"); // Only display once between waves.
+            }
 
-        //    waitTimeForWave -= Time.deltaTime; // Only count down if all enemies are dead.
-        //}
+            waitTimeForWave -= Time.deltaTime; // Only count down if all enemies are dead.
+        }
 
-        //if (waitTimeForWave <= 0 & spawnEnabled == true)
-        //{
+        if (waitTimeForWave <= 0 & spawnEnabled == true)
+        {
 
-        //    var numInThisWave = waves[currentWave].NumberInThisWave();
+            var numInThisWave = waves[currentWave].NumberInThisWave();
 
-        //    //gameController.UpdateWaveText(currentWave + 1);
+            //gameController.UpdateWaveText(currentWave + 1);
 
-        //    StartCoroutine(SpawnWave(numInThisWave));
+            StartCoroutine(SpawnWave(numInThisWave));
 
-        //    //waitTimeForWave = timeBetweenWaves;
+            waitTimeForWave = timeBetweenWaves;
 
-        //}
+        }
     }
 
 
@@ -93,8 +96,6 @@ public class AudienceSpawner : MonoBehaviour
         {
             if (spawnEnabled)
             {
-                //var rndIndex = Random.Range(0, spawnLocations.Length);
-                //Vector3 location = LevelMapper.instance.tileSourceXYZ; //spawnLocations[rndIndex].position;
 
                 var unitToSpawn = waves[currentWave].RandomPrefab();
 
@@ -104,23 +105,22 @@ public class AudienceSpawner : MonoBehaviour
             }
         }
 
-        //lastWave = currentWave + 1;
+        lastWave = currentWave + 1;
 
-        //if (currentWave >= (waves.Length - 1))
-        //{
-        //    currentWave = (waves.Length - 1);
-        //}
-        //else
-        //{
-        //    currentWave++;
-        //}
+        // TODO END OF LEVEL
+        if (currentWave >= (waves.Length - 1))
+        {
+            currentWave = (waves.Length - 1);
+        }
+        else
+        {
+            currentWave++;
+        }
 
         Debug.Log("Spawning Finished");
 
         spawning = false;
-        //spawnEnabled = false;
-        if (spawnEnabled)
-            SpawnWave();
+
     }
 
 
@@ -135,22 +135,9 @@ public class AudienceSpawner : MonoBehaviour
         else
         {
             spawnEnabled = true;
-
-            numInThisWave = waves[currentWave].NumberInThisWave();
-            StartCoroutine(SpawnWave(numInThisWave));
-
             AudioManager.instance.musicSource.Play();
         }
 
-        //int audienceWave = 10;
-        //GameObject[] gos = new GameObject[audienceWave];
-
-        //for (int i = 0; i < audienceWave; i++)
-        //{
-        //    GameObject go = Instantiate(spawnUnit, new Vector3(20, 0, 8), spawnUnit.transform.rotation);
-        //                gos[i] = go;
-        //    levelMapper.GetMappedPath(gos[i]);
-        //}
     }
 
 

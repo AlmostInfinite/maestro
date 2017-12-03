@@ -10,6 +10,17 @@ using UnityEngine;
 public class LevelMapper : MonoBehaviour
 {
 
+    [System.Serializable]
+    public class InstrumentTypeInfo
+    {
+
+        public string name;
+        public Color instrumentColor;
+
+    }
+
+    public InstrumentTypeInfo[] instrumentTypes;
+    
     public static LevelMapper instance = null;
 
     [HideInInspector]

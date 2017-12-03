@@ -45,19 +45,19 @@ public class TowerManager : MonoBehaviour
 
         switch (selectedTowerType)
         {
-            case 1:
+            case 0:
                 selectedColor = Color.red;
                 break;
-            case 2:
+            case 1:
                 selectedColor = Color.blue;
                 break;
-            case 3:
+            case 2:
                 selectedColor = Color.yellow;
                 break;
-            case 4:
+            case 3:
                 selectedColor = Color.green;
                 break;
-            case 5:
+            case 4:
                 selectedColor = Color.cyan;
                 break;
             default:

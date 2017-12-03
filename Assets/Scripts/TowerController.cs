@@ -24,8 +24,9 @@ public class TowerController : MonoBehaviour
     // TODO Move mouseup to manager and create functions for selecting and deselecting a tower.
     void OnMouseUp()
     {
-        if (tower.isNode && tower.towerType != 0) //and not on cooldown??
+        if (tower.isNode && tower.towerType != -1) //and not on cooldown??
         {
+
             Fire();
             // Set cooldown??
         }            

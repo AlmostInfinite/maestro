@@ -6,11 +6,13 @@ public class Level : MonoBehaviour
 {
     // TODO - loads/saves level layout - save map variables to a file and load on init.
 
-    public GameObject spawnPosition, spawnUnit, backWall, leftWall, rightWall;
+    public List<int> unitsToSpawn;
+
+    public GameObject backWall, leftWall, rightWall;
     
     public int[,] tiles;
 
-
+    
     // Map variables
 
     int leftBorder = 5;     // Use to move rows right(z).
@@ -311,14 +313,14 @@ public class Level : MonoBehaviour
         //None
 
         //Row 6
-        tiles[6 + leftBorder, 10 + bottomBorder] = 0;
-        tiles[6 + leftBorder, 0 + bottomBorder] = 0;
+        tiles[6 + leftBorder, 10 + bottomBorder] = 2;
+        tiles[6 + leftBorder, 0 + bottomBorder] = 2;
 
         //Row 7
         //None
 
         //Row 8
-        tiles[8 + leftBorder, 5 + bottomBorder] = 0;
+        tiles[8 + leftBorder, 5 + bottomBorder] = 2;
         tiles[8 + leftBorder, 0 + bottomBorder] = 2;
 
         //Row 9
