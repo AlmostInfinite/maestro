@@ -16,11 +16,12 @@ public class GameObjectDragAndDrop : MonoBehaviour {
     void Awake()
     {
         item = this.gameObject;
-        startPosition = item.transform.position;
+        
     }
 
     private void Start()
     {
+        startPosition = item.transform.position;
         //towerType = this.GetComponent<Tower>().towerType;
     }
 
