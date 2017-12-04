@@ -11,6 +11,8 @@ public class AudienceSpawner : MonoBehaviour
 
     //TODO - Spawn audience units. - Store/access?? (from level/gamemanager) spawn timers/waves/difficulty?? - load/save settings for spawn timing, waves?? 
 
+   public Animator conductorAnimator;
+
     public GameObject unitToSpawn;
     //public LevelMapper levelMapper;
 
@@ -132,11 +134,13 @@ public class AudienceSpawner : MonoBehaviour
         {
             spawnEnabled = false;
             AudioManager.instance.musicSource.Stop();
+            conductorAnimator.SetBool("Animated", false);
         }
         else
         {
             spawnEnabled = true;
             AudioManager.instance.musicSource.Play();
+            conductorAnimator.SetBool("Animated", true);
         }
 
     }

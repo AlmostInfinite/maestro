@@ -81,7 +81,7 @@ MonoBehaviour:
     isWalkable: 0
     movementCost: 0
   - name: Blocker
-    tileVisualPrefab: {fileID: 1532534935856414, guid: d64b0a5e6bcb0d042a6b07d51ee656cb,
+    tileVisualPrefab: {fileID: 1417968106540038, guid: 974f22eddd30fe9448046d4563e9e3f2,
       type: 2}
     isTower: 0
     isWalkable: 0

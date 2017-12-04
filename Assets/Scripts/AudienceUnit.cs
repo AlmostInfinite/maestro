@@ -58,7 +58,12 @@ public class AudienceUnit : MonoBehaviour
 
         Color selectedColor = LevelMapper.instance.instrumentTypes[instrumentType].instrumentColor;
 
-        GetComponentInChildren<MeshRenderer>().material.SetColor("_Color", selectedColor);
+        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
+        foreach (var r in renderers)
+        {
+            r.material.SetColor("_Color", selectedColor);
+        }
+        //GetComponentInChildren<MeshRenderer>().material.SetColor("_Color", selectedColor);
 
 
     }
