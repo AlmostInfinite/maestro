@@ -8,6 +8,8 @@ TagManager:
   - Seat
   - TowerNode
   - Enemy
+  - Hat
+  - Painted
   layers:
   - Default
   - TransparentFX

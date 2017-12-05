@@ -61,6 +61,7 @@ public class AudienceUnit : MonoBehaviour
         MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
         foreach (var r in renderers)
         {
+            if (r.gameObject.CompareTag("Painted"))
             r.material.SetColor("_Color", selectedColor);
         }
         //GetComponentInChildren<MeshRenderer>().material.SetColor("_Color", selectedColor);
@@ -84,8 +85,15 @@ public class AudienceUnit : MonoBehaviour
         if (Vector3.Distance(transform.position, LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ)) < 0.1f)
             AdvancePathing();
 
+        
+
         // Smoothly animate towards the correct map tile.
         transform.position = Vector3.Lerp(transform.position, LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ), moveSpeed * Time.deltaTime);
+
+        Vector3 pos = LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ) - transform.position;
+        var newRot = Quaternion.LookRotation(pos);
+        transform.rotation = Quaternion.Lerp(transform.rotation, newRot, 0.5f);
+        //transform.LookAt(LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ));
 
     }
 
@@ -98,7 +106,7 @@ public class AudienceUnit : MonoBehaviour
             FinshedPath();
             return;
         }
-
+        
         currentPathNode++;
 
         // Teleport us to our correct "current" position, in case we
