@@ -36,6 +36,7 @@ public class AudienceUnit : MonoBehaviour
     public float moveSpeed; //How fast unit moves, Increase to increase speed.
 
     bool move = true;
+    bool moved = true;
 
     private void Awake()
     {
@@ -64,7 +65,6 @@ public class AudienceUnit : MonoBehaviour
             if (r.gameObject.CompareTag("Painted"))
             r.material.SetColor("_Color", selectedColor);
         }
-        //GetComponentInChildren<MeshRenderer>().material.SetColor("_Color", selectedColor);
 
 
     }
@@ -84,16 +84,17 @@ public class AudienceUnit : MonoBehaviour
         //// advance to the next step in our pathfinding?
         if (Vector3.Distance(transform.position, LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ)) < 0.1f)
             AdvancePathing();
-
+     else if (moved)
+        {   //Only rotate if unit has moved
+            Vector3 pos = LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ) - transform.position;
+            Quaternion newRot = Quaternion.LookRotation(pos);
+            transform.rotation = Quaternion.Lerp(transform.rotation, newRot, 0.9f);
+            moved = !moved;
+        }
         
 
         // Smoothly animate towards the correct map tile.
         transform.position = Vector3.Lerp(transform.position, LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ), moveSpeed * Time.deltaTime);
-
-        Vector3 pos = LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ) - transform.position;
-        var newRot = Quaternion.LookRotation(pos);
-        transform.rotation = Quaternion.Lerp(transform.rotation, newRot, 0.5f);
-        //transform.LookAt(LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ));
 
     }
 
@@ -101,12 +102,14 @@ public class AudienceUnit : MonoBehaviour
     void AdvancePathing()
     {
 
+        moved = !moved;
+
         if (move == false)
         {
             FinshedPath();
             return;
         }
-        
+
         currentPathNode++;
 
         // Teleport us to our correct "current" position, in case we
