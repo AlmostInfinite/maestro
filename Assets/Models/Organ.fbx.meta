@@ -1,9 +1,9 @@
 fileFormatVersion: 2
 guid: 73be9af54699cbf4f9e4b3a48bbe3fd0
-timeCreated: 1512363839
-licenseType: Pro
+timeCreated: 1512461668
+licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: group
     100002: group1
@@ -6454,6 +6454,84 @@ ModelImporter:
     112426: transform97
     112428: transform98
     112430: transform99
+    112432: Back_board
+    112434: Base
+    112436: Base 1
+    112438: Big_Lane
+    112440: Big_Lane 1
+    112442: First_Lane
+    112444: First_Lane 1
+    112446: Keyboard_1
+    112448: Keyboard_1 1
+    112450: Keyboard_2
+    112452: Keyboard_2 1
+    112454: Keyboard_3
+    112456: Keyboard_3 1
+    112458: Keyboard_4
+    112460: Keyboard_4 1
+    112462: Keyboard_Base
+    112464: Left_Board
+    112466: Legs
+    112468: Organ 1
+    112470: pasted__pasted__pasted__pasted__pasted__pCylinder5
+    112472: pasted__pasted__pasted__pasted__pasted__pCylinder6
+    112474: pasted__pasted__pasted__pasted__pasted__pCylinder7
+    112476: pasted__pasted__pasted__pasted__pCube2
+    112478: pasted__pasted__pasted__pasted__pCube2 1
+    112480: pasted__pasted__pasted__pasted__pCube2 2
+    112482: pasted__pasted__pasted__pasted__pCube4
+    112484: pasted__pasted__pasted__pasted__pCube4 1
+    112486: pasted__pasted__pasted__pasted__pCube4 2
+    112488: pasted__pasted__pasted__pasted__pCube5
+    112490: pasted__pasted__pasted__pasted__pCube5 1
+    112492: pasted__pasted__pasted__pasted__pCube5 2
+    112494: pasted__pasted__pasted__pasted__pCylinder13
+    112496: pasted__pasted__pasted__pasted__pCylinder4 1
+    112498: pasted__pasted__pasted__pasted__pCylinder5
+    112500: pasted__pasted__pasted__pasted__pCylinder5 1
+    112502: pasted__pasted__pasted__pasted__pCylinder6
+    112504: pasted__pasted__pasted__pasted__pCylinder6 1
+    112506: pasted__pasted__pasted__pasted__pCylinder7
+    112508: pasted__pasted__pasted__pasted__pCylinder7 1
+    112510: pasted__pasted__pasted__pasted__pCylinder8
+    112512: pasted__pasted__pasted__pasted__pCylinder9
+    112514: pasted__pasted__pasted__pCube2
+    112516: pasted__pasted__pasted__pCube2 1
+    112518: pasted__pasted__pasted__pCube2 2
+    112520: pasted__pasted__pasted__pCube2 3
+    112522: pasted__pasted__pasted__pCube4
+    112524: pasted__pasted__pasted__pCube4 1
+    112526: pasted__pasted__pasted__pCube4 2
+    112528: pasted__pasted__pasted__pCube4 3
+    112530: pasted__pasted__pasted__pCube5
+    112532: pasted__pasted__pasted__pCube5 1
+    112534: pasted__pasted__pasted__pCube5 2
+    112536: pasted__pasted__pasted__pCube5 3
+    112538: pasted__pasted__pasted__pCube6
+    112540: pasted__pasted__pasted__pCube6 1
+    112542: pasted__pasted__pasted__pCube6 2
+    112544: pasted__pasted__pasted__pCylinder5
+    112546: pasted__pasted__pasted__pCylinder5 1
+    112548: pasted__pasted__pasted__pCylinder6
+    112550: pasted__pasted__pasted__pCylinder7
+    112552: pasted__pasted__pasted__pCylinder8
+    112554: pasted__pasted__pasted__pCylinder9
+    112556: pasted__pasted__pCube1
+    112558: pasted__pasted__pCube1 1
+    112560: pasted__pasted__pCube1 2
+    112562: pasted__pasted__pCube2 1
+    112564: pasted__pasted__pCube2 2
+    112566: pasted__pasted__pCube2 3
+    112568: pasted__pasted__pCube4
+    112570: pasted__pasted__pCube6
+    112572: pasted__pasted__pCylinder5
+    112574: pasted__pCube1
+    112576: Pipe_Brace
+    112578: Pipes
+    112580: Right_Board
+    112582: Second_Lane
+    112584: Second_Lane 1
+    112586: Stool
     400000: group
     400002: group1
     400004: group10
@@ -12903,23 +12981,121 @@ ModelImporter:
     412426: transform97
     412428: transform98
     412430: transform99
+    412432: Back_board
+    412434: Base
+    412436: Base 1
+    412438: Big_Lane
+    412440: Big_Lane 1
+    412442: First_Lane
+    412444: First_Lane 1
+    412446: Keyboard_1
+    412448: Keyboard_1 1
+    412450: Keyboard_2
+    412452: Keyboard_2 1
+    412454: Keyboard_3
+    412456: Keyboard_3 1
+    412458: Keyboard_4
+    412460: Keyboard_4 1
+    412462: Keyboard_Base
+    412464: Left_Board
+    412466: Legs
+    412468: Organ 1
+    412470: pasted__pasted__pasted__pasted__pasted__pCylinder5
+    412472: pasted__pasted__pasted__pasted__pasted__pCylinder6
+    412474: pasted__pasted__pasted__pasted__pasted__pCylinder7
+    412476: pasted__pasted__pasted__pasted__pCube2
+    412478: pasted__pasted__pasted__pasted__pCube2 1
+    412480: pasted__pasted__pasted__pasted__pCube2 2
+    412482: pasted__pasted__pasted__pasted__pCube4
+    412484: pasted__pasted__pasted__pasted__pCube4 1
+    412486: pasted__pasted__pasted__pasted__pCube4 2
+    412488: pasted__pasted__pasted__pasted__pCube5
+    412490: pasted__pasted__pasted__pasted__pCube5 1
+    412492: pasted__pasted__pasted__pasted__pCube5 2
+    412494: pasted__pasted__pasted__pasted__pCylinder13
+    412496: pasted__pasted__pasted__pasted__pCylinder4 1
+    412498: pasted__pasted__pasted__pasted__pCylinder5
+    412500: pasted__pasted__pasted__pasted__pCylinder5 1
+    412502: pasted__pasted__pasted__pasted__pCylinder6
+    412504: pasted__pasted__pasted__pasted__pCylinder6 1
+    412506: pasted__pasted__pasted__pasted__pCylinder7
+    412508: pasted__pasted__pasted__pasted__pCylinder7 1
+    412510: pasted__pasted__pasted__pasted__pCylinder8
+    412512: pasted__pasted__pasted__pasted__pCylinder9
+    412514: pasted__pasted__pasted__pCube2
+    412516: pasted__pasted__pasted__pCube2 1
+    412518: pasted__pasted__pasted__pCube2 2
+    412520: pasted__pasted__pasted__pCube2 3
+    412522: pasted__pasted__pasted__pCube4
+    412524: pasted__pasted__pasted__pCube4 1
+    412526: pasted__pasted__pasted__pCube4 2
+    412528: pasted__pasted__pasted__pCube4 3
+    412530: pasted__pasted__pasted__pCube5
+    412532: pasted__pasted__pasted__pCube5 1
+    412534: pasted__pasted__pasted__pCube5 2
+    412536: pasted__pasted__pasted__pCube5 3
+    412538: pasted__pasted__pasted__pCube6
+    412540: pasted__pasted__pasted__pCube6 1
+    412542: pasted__pasted__pasted__pCube6 2
+    412544: pasted__pasted__pasted__pCylinder5
+    412546: pasted__pasted__pasted__pCylinder5 1
+    412548: pasted__pasted__pasted__pCylinder6
+    412550: pasted__pasted__pasted__pCylinder7
+    412552: pasted__pasted__pasted__pCylinder8
+    412554: pasted__pasted__pasted__pCylinder9
+    412556: pasted__pasted__pCube1
+    412558: pasted__pasted__pCube1 1
+    412560: pasted__pasted__pCube1 2
+    412562: pasted__pasted__pCube2 1
+    412564: pasted__pasted__pCube2 2
+    412566: pasted__pasted__pCube2 3
+    412568: pasted__pasted__pCube4
+    412570: pasted__pasted__pCube6
+    412572: pasted__pasted__pCylinder5
+    412574: pasted__pCube1
+    412576: Pipe_Brace
+    412578: Pipes
+    412580: Right_Board
+    412582: Second_Lane
+    412584: Second_Lane 1
+    412586: Stool
     2300000: group22_pasted__group21_pasted__pasted__pCube7_MeshPart0
     2300002: group22_pasted__group21_pasted__pasted__pCube7_MeshPart1
+    2300004: Base 1
+    2300006: Big_Lane 1
+    2300008: First_Lane 1
+    2300010: Keyboard_1 1
+    2300012: Keyboard_2 1
+    2300014: Keyboard_3 1
+    2300016: Keyboard_4 1
+    2300018: Second_Lane 1
+    2300020: Stool
     3300000: group22_pasted__group21_pasted__pasted__pCube7_MeshPart0
     3300002: group22_pasted__group21_pasted__pasted__pCube7_MeshPart1
+    3300004: Base 1
+    3300006: Big_Lane 1
+    3300008: First_Lane 1
+    3300010: Keyboard_1 1
+    3300012: Keyboard_2 1
+    3300014: Keyboard_3 1
+    3300016: Keyboard_4 1
+    3300018: Second_Lane 1
+    3300020: Stool
     4300000: group22_pasted__group21_pasted__pasted__pCube7_MeshPart0
     4300002: group22_pasted__group21_pasted__pasted__pCube7_MeshPart1
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: fcd8e7146c31a3341b24e3776720a825, type: 2}
+    4300004: Keyboard_4
+    4300006: Keyboard_3
+    4300008: Keyboard_2
+    4300010: Keyboard_1
+    4300012: Stool
+    4300014: Base
+    4300016: First_Lane
+    4300018: Second_Lane
+    4300020: Big_Lane
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -12932,7 +13108,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
