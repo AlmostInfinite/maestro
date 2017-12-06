@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872692, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -184,6 +184,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114368710903516966, guid: 3ebf264dffe866b4fae70df759813e4c,
+        type: 2}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1301036828555910, guid: cecf7e5e6d1aa394c961228fb7c0bb5a,
+        type: 2}
+    - target: {fileID: 114368710903516966, guid: 3ebf264dffe866b4fae70df759813e4c,
+        type: 2}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1074341245063466, guid: d861d5617dcff7a4592f7852047583bc,
+        type: 2}
+    - target: {fileID: 114368710903516966, guid: 3ebf264dffe866b4fae70df759813e4c,
+        type: 2}
+      propertyPath: levelMapper
+      value: 
+      objectReference: {fileID: 1545110847735098, guid: 8fad0ed97128a8749baafc357c3bdeb7,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ebf264dffe866b4fae70df759813e4c, type: 2}
   m_IsPrefabParent: 0
