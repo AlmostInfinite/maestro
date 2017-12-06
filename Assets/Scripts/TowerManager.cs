@@ -16,6 +16,10 @@ public class TowerManager : MonoBehaviour
 
     public int selectedTowerType;
 
+    public GameObject percussionPrefab, stringsPrefab, brassPrefab, windPrefab, keyboardPrefab;
+
+    public Transform instrumentSpawn;
+
     void Awake()
     {
         //Check if instance already exists
@@ -40,6 +44,9 @@ public class TowerManager : MonoBehaviour
     {
 
         selectedTowerType = selectedTower.GetComponent<Tower>().towerType;
+        instrumentSpawn = targetTowerNode.transform.Find("Spawn");
+
+        Debug.Log (instrumentSpawn);
 
         Color selectedColor;
 
@@ -47,6 +54,7 @@ public class TowerManager : MonoBehaviour
         {
             case 0:
                 selectedColor = Color.red;
+                Instantiate(percussionPrefab, instrumentSpawn.position, instrumentSpawn.rotation);
                 break;
             case 1:
                 selectedColor = Color.blue;

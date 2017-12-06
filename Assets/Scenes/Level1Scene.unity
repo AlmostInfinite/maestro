@@ -370,6 +370,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedTowerType: 0
+  percussionPrefab: {fileID: 1383696226745400, guid: 655c4aa5d9307a8488a2a41230e92cd4,
+    type: 2}
+  stringsPrefab: {fileID: 0}
+  brassPrefab: {fileID: 0}
+  windPrefab: {fileID: 0}
+  keyboardPrefab: {fileID: 0}
+  instrumentSpawn: {fileID: 0}
 --- !u!4 &160109283
 Transform:
   m_ObjectHideFlags: 0
