@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114549557246570904}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Painted
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 114307310972157910}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Painted
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,4 +390,3 @@ MonoBehaviour:
   tileZ: 0
   HP: 2
   instrumentType: 0
-  moveSpeed: 3.9
