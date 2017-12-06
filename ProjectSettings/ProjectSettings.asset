@@ -146,6 +146,7 @@ PlayerSettings:
   resolutionScalingMode: 0
   applicationIdentifier:
     Android: com.Almostinfinite.Maestro
+    Standalone: com.AlmostInfinite.Maestro
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
