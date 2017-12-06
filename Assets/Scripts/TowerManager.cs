@@ -58,15 +58,19 @@ public class TowerManager : MonoBehaviour
                 break;
             case 1:
                 selectedColor = Color.blue;
+                Instantiate(windPrefab, instrumentSpawn.position, instrumentSpawn.rotation);
                 break;
             case 2:
                 selectedColor = Color.yellow;
+                Instantiate(brassPrefab, instrumentSpawn.position, instrumentSpawn.rotation);
                 break;
             case 3:
                 selectedColor = Color.green;
+                Instantiate(stringsPrefab, instrumentSpawn.position, instrumentSpawn.rotation);
                 break;
             case 4:
                 selectedColor = Color.cyan;
+                Instantiate(keyboardPrefab, instrumentSpawn.position, instrumentSpawn.rotation);
                 break;
             default:
                 Debug.Log("Error");

@@ -52,9 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae40aca32a48c634ba57cfdf9ca3a3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  audioManager: {fileID: 0}
-  levelMapper: {fileID: 0}
+  gameManager: {fileID: 1301036828555910, guid: cecf7e5e6d1aa394c961228fb7c0bb5a,
+    type: 2}
+  audioManager: {fileID: 1074341245063466, guid: d861d5617dcff7a4592f7852047583bc,
+    type: 2}
+  levelMapper: {fileID: 1545110847735098, guid: 8fad0ed97128a8749baafc357c3bdeb7,
+    type: 2}
 --- !u!114 &114975195866214842
 MonoBehaviour:
   m_ObjectHideFlags: 1

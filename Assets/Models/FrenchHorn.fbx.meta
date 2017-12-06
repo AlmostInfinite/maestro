@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 86724446b0548c54fbed70913eca10ad
-timeCreated: 1512356810
+guid: 6d2f0af25f9a5e541a4f1c1cc88d4236
+timeCreated: 1512546980
 licenseType: Pro
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
     100002: group
@@ -314,17 +314,10 @@ ModelImporter:
     2300000: group1_pasted__pasted__pCylinder2
     3300000: group1_pasted__pasted__pCylinder2
     4300000: group1_pasted__pasted__pCylinder2
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: e062862d53f5a844fbe41b60cc288b91, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -337,7 +330,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
