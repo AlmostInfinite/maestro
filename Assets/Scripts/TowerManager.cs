@@ -46,7 +46,11 @@ public class TowerManager : MonoBehaviour
         selectedTowerType = selectedTower.GetComponent<Tower>().towerType;
         instrumentSpawn = targetTowerNode.transform.Find("Spawn");
 
-        Debug.Log (instrumentSpawn);
+        foreach (Transform child in targetTowerNode.transform)
+        {
+            if (child.tag == "Instrument")
+                Destroy(child.gameObject);
+        }
 
         Color selectedColor;
 
@@ -54,23 +58,23 @@ public class TowerManager : MonoBehaviour
         {
             case 0:
                 selectedColor = Color.red;
-                Instantiate(percussionPrefab, instrumentSpawn.position, instrumentSpawn.rotation);
+                Instantiate(percussionPrefab, instrumentSpawn.position, instrumentSpawn.rotation, targetTowerNode.transform);
                 break;
             case 1:
                 selectedColor = Color.blue;
-                Instantiate(windPrefab, instrumentSpawn.position, instrumentSpawn.rotation);
+                Instantiate(windPrefab, instrumentSpawn.position, instrumentSpawn.rotation, targetTowerNode.transform);
                 break;
             case 2:
                 selectedColor = Color.yellow;
-                Instantiate(brassPrefab, instrumentSpawn.position, instrumentSpawn.rotation);
+                Instantiate(brassPrefab, instrumentSpawn.position, instrumentSpawn.rotation, targetTowerNode.transform);
                 break;
             case 3:
                 selectedColor = Color.green;
-                Instantiate(stringsPrefab, instrumentSpawn.position, instrumentSpawn.rotation);
+                Instantiate(stringsPrefab, instrumentSpawn.position, instrumentSpawn.rotation, targetTowerNode.transform);
                 break;
             case 4:
                 selectedColor = Color.cyan;
-                Instantiate(keyboardPrefab, instrumentSpawn.position, instrumentSpawn.rotation);
+                Instantiate(keyboardPrefab, instrumentSpawn.position - new Vector3 (0,1f,0), keyboardPrefab.transform.rotation, targetTowerNode.transform);
                 break;
             default:
                 Debug.Log("Error");

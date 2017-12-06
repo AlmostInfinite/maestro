@@ -15,12 +15,12 @@ public class GameObjectDragAndDrop : MonoBehaviour {
 
     void Awake()
     {
-        item = this.gameObject;
         
     }
 
     private void Start()
     {
+        item = this.gameObject;
         startPosition = item.transform.position;
         //towerType = this.GetComponent<Tower>().towerType;
     }

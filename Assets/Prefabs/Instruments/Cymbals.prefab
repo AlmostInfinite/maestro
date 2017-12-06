@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4678776751006102}
   m_Layer: 0
   m_Name: Cymbals
-  m_TagString: Untagged
+  m_TagString: Instrument
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

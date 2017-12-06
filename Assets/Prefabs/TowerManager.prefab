@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1589768251281664}
+  m_IsPrefabParent: 1
+--- !u!1 &1589768251281664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4343989469185078}
+  - component: {fileID: 114116590290178346}
+  m_Layer: 0
+  m_Name: TowerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4343989469185078
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1589768251281664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114116590290178346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1589768251281664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480a798d1cbbaa948a7de56d39e886d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedTowerType: 0
+  percussionPrefab: {fileID: 1179376782319554, guid: 655c4aa5d9307a8488a2a41230e92cd4,
+    type: 2}
+  stringsPrefab: {fileID: 1190331246186518, guid: b18ff2e33c990a540bc29301efd99e93,
+    type: 2}
+  brassPrefab: {fileID: 1523791472954428, guid: adde4b1ddc71e8f4b92788e4dd9812a7,
+    type: 2}
+  windPrefab: {fileID: 1466722116678738, guid: c51a39dcd5680944fb3de11cd2a6d591, type: 2}
+  keyboardPrefab: {fileID: 1246561000681042, guid: 3c69a2cae3e263a418ab61e596090bc0,
+    type: 2}
+  instrumentSpawn: {fileID: 0}
