@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4119253447647558}
   - component: {fileID: 114193972017368418}
-  - component: {fileID: 114650660864401818}
+  - component: {fileID: 114270848843251398}
+  - component: {fileID: 114167223136076502}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -41,6 +42,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114167223136076502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628223891123072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7685c224bd914f847af6c16e385d68b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsToSpawn: 00000000020000000300000002000000000000000200000001000000000000000300000000000000020000000000000000000000040000000000000003000000040000000100000003000000000000000200000004000000020000000100000002000000010000000100000000000000000000000200000001000000000000000200000004000000000000000200000000000000000000000000000002000000000000000000000000000000000000000000000002000000000000000400000000000000040000000300000003000000040000000300000000000000
+  backWall: {fileID: 1581439040911970, guid: 710ddcc6b54604d43b2d69793daffef5, type: 2}
+  leftWall: {fileID: 1410594951472678, guid: af909b0a0fce44548954abf36d2781c5, type: 2}
+  rightWall: {fileID: 1463267843914624, guid: 25760afa2e7847a488628dbb71be852f, type: 2}
+  moveSpeed: 3.9
+  leftBorder: 5
+  rightBorder: 1
+  topBorder: 3
+  bottomBorder: 3
+  mapSizeX: 16
+  mapSizeZ: 11
+  tileSourceX: 21
+  tileSourceZ: 8
+  tileTargetX: 5
+  tileTargetZ: 3
 --- !u!114 &114193972017368418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,17 +79,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb8b209a35f2124e882c27469007937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitToSpawn: {fileID: 1231821707504534, guid: d5cd928f40229474aaa4391d3fdf1b81,
+  conductorAnimator: {fileID: 0}
+  unitToSpawn: {fileID: 1776498874426024, guid: d5cd928f40229474aaa4391d3fdf1b81,
     type: 2}
   currentWave: 0
   spawnEnabled: 0
+  timeBetweenWaves: 3
   waves:
   - unitsInWave:
-    - {fileID: 1231821707504534, guid: d5cd928f40229474aaa4391d3fdf1b81, type: 2}
-    minUnits: 100
-    maxUnits: 100
-    timeBetweenSpawns: 2.3
---- !u!114 &114650660864401818
+    - {fileID: 1702903751143828, guid: 7c8a0ee6ae8f7fc44a8d48c99e5ee0db, type: 2}
+    minUnits: 15
+    maxUnits: 15
+    timeBetweenSpawns: 2.222
+  - unitsInWave:
+    - {fileID: 1702903751143828, guid: 7c8a0ee6ae8f7fc44a8d48c99e5ee0db, type: 2}
+    - {fileID: 1680832152564598, guid: bbe1a3fff61fc8d46bc44a14afdeb155, type: 2}
+    minUnits: 15
+    maxUnits: 15
+    timeBetweenSpawns: 2.222
+  - unitsInWave:
+    - {fileID: 1702903751143828, guid: 7c8a0ee6ae8f7fc44a8d48c99e5ee0db, type: 2}
+    - {fileID: 1680832152564598, guid: bbe1a3fff61fc8d46bc44a14afdeb155, type: 2}
+    - {fileID: 1271446004801886, guid: 328a7ed77eca0d5489668d9a26908818, type: 2}
+    minUnits: 25
+    maxUnits: 25
+    timeBetweenSpawns: 2.222
+--- !u!114 &114270848843251398
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -70,17 +112,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1628223891123072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a869a77591970c4428d6b87320e807ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 31007b1c3741ce149b8d67445e3cf698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 0}
-  spawnUnit: {fileID: 0}
-  backWall: {fileID: 0}
-  leftWall: {fileID: 0}
-  rightWall: {fileID: 0}
-  mapSizeX: 0
-  mapSizeZ: 0
-  tileSourceX: 0
-  tileSourceZ: 0
-  tileTargetX: 0
-  tileTargetZ: 0
+  unitsToSpawn: 0000000001000000000000000400000000000000000000000200000000000000000000000200000000000000000000000300000003000000020000000200000001000000000000000100000000000000010000000000000000000000010000000000000000000000010000000000000001000000000000000000000001000000000000000000000000000000
+  backWall: {fileID: 1581439040911970, guid: 710ddcc6b54604d43b2d69793daffef5, type: 2}
+  leftWall: {fileID: 1410594951472678, guid: af909b0a0fce44548954abf36d2781c5, type: 2}
+  rightWall: {fileID: 1463267843914624, guid: 25760afa2e7847a488628dbb71be852f, type: 2}
+  moveSpeed: 0
+  leftBorder: 5
+  rightBorder: 1
+  topBorder: 3
+  bottomBorder: 3
+  mapSizeX: 16
+  mapSizeZ: 11
+  tileSourceX: 21
+  tileSourceZ: 8
+  tileTargetX: 5
+  tileTargetZ: 3
