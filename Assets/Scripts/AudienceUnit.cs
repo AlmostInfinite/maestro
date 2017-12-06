@@ -33,8 +33,7 @@ public class AudienceUnit : MonoBehaviour
     // Base Unit Stats
     public int HP; // Unit HP
     public int instrumentType; // Instrument type used to kill unit and set color.
-    public float moveSpeed; //How fast unit moves, Increase to increase speed.
-
+    
     bool move = true;
     bool moved = true;
 
@@ -46,7 +45,12 @@ public class AudienceUnit : MonoBehaviour
     private void Start()
     {
 
-        currentLevel = FindObjectOfType<Level>();
+        currentLevel = FindObjectOfType<Level1>();
+        if (currentLevel == null)
+            currentLevel = FindObjectOfType<Level2>();
+        if (currentLevel == null)
+            currentLevel = FindObjectOfType<Level3>();
+
 
         LevelMapper.instance.GetMappedPath(gameObject);
 
@@ -94,7 +98,7 @@ public class AudienceUnit : MonoBehaviour
         
 
         // Smoothly animate towards the correct map tile.
-        transform.position = Vector3.Lerp(transform.position, LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ), moveSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, LevelMapper.instance.TileCoordToWorldCoord(tileX, tileZ), currentLevel.moveSpeed * Time.deltaTime);
 
     }
 

@@ -305,6 +305,37 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 93425586}
+--- !u!1 &102895713 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1628223891123072, guid: 3a83fdacf1f3d574fa6308b35fa6259c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1640567105}
+--- !u!114 &102895714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 102895713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7685c224bd914f847af6c16e385d68b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitsToSpawn: 00000000020000000300000002000000000000000200000001000000000000000300000000000000020000000000000000000000040000000000000003000000040000000100000003000000000000000200000004000000020000000100000002000000010000000100000000000000000000000200000001000000000000000200000004000000000000000200000000000000000000000000000002000000000000000000000000000000000000000000000002000000000000000400000000000000040000000300000003000000040000000300000000000000
+  backWall: {fileID: 1581439040911970, guid: 710ddcc6b54604d43b2d69793daffef5, type: 2}
+  leftWall: {fileID: 1410594951472678, guid: af909b0a0fce44548954abf36d2781c5, type: 2}
+  rightWall: {fileID: 1463267843914624, guid: 25760afa2e7847a488628dbb71be852f, type: 2}
+  moveSpeed: 3.9
+  leftBorder: 5
+  rightBorder: 1
+  topBorder: 3
+  bottomBorder: 3
+  mapSizeX: 16
+  mapSizeZ: 11
+  tileSourceX: 21
+  tileSourceZ: 8
+  tileTargetX: 5
+  tileTargetZ: 3
 --- !u!114 &133395597 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114975195866214842, guid: 3ebf264dffe866b4fae70df759813e4c,
@@ -961,11 +992,16 @@ Prefab:
     - target: {fileID: 114193972017368418, guid: 3a83fdacf1f3d574fa6308b35fa6259c,
         type: 2}
       propertyPath: waves.Array.data[1].unitsInWave.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114193972017368418, guid: 3a83fdacf1f3d574fa6308b35fa6259c,
         type: 2}
       propertyPath: waves.Array.data[2].unitsInWave.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114193972017368418, guid: 3a83fdacf1f3d574fa6308b35fa6259c,
+        type: 2}
+      propertyPath: waves.Array.data[0].unitsInWave.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4119253447647558, guid: 3a83fdacf1f3d574fa6308b35fa6259c, type: 2}
@@ -1432,7 +1468,38 @@ Prefab:
       value: 
       objectReference: {fileID: 1776498874426024, guid: d5cd928f40229474aaa4391d3fdf1b81,
         type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 114193972017368418, guid: 3a83fdacf1f3d574fa6308b35fa6259c,
+        type: 2}
+      propertyPath: waves.Array.data[0].unitsInWave.Array.data[1]
+      value: 
+      objectReference: {fileID: 1680832152564598, guid: bbe1a3fff61fc8d46bc44a14afdeb155,
+        type: 2}
+    - target: {fileID: 114193972017368418, guid: 3a83fdacf1f3d574fa6308b35fa6259c,
+        type: 2}
+      propertyPath: waves.Array.data[0].unitsInWave.Array.data[2]
+      value: 
+      objectReference: {fileID: 1702903751143828, guid: 7c8a0ee6ae8f7fc44a8d48c99e5ee0db,
+        type: 2}
+    - target: {fileID: 114193972017368418, guid: 3a83fdacf1f3d574fa6308b35fa6259c,
+        type: 2}
+      propertyPath: waves.Array.data[1].unitsInWave.Array.data[1]
+      value: 
+      objectReference: {fileID: 1680832152564598, guid: bbe1a3fff61fc8d46bc44a14afdeb155,
+        type: 2}
+    - target: {fileID: 114193972017368418, guid: 3a83fdacf1f3d574fa6308b35fa6259c,
+        type: 2}
+      propertyPath: waves.Array.data[2].unitsInWave.Array.data[1]
+      value: 
+      objectReference: {fileID: 1680832152564598, guid: bbe1a3fff61fc8d46bc44a14afdeb155,
+        type: 2}
+    - target: {fileID: 114193972017368418, guid: 3a83fdacf1f3d574fa6308b35fa6259c,
+        type: 2}
+      propertyPath: waves.Array.data[2].unitsInWave.Array.data[2]
+      value: 
+      objectReference: {fileID: 1271446004801886, guid: 328a7ed77eca0d5489668d9a26908818,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 114650660864401818, guid: 3a83fdacf1f3d574fa6308b35fa6259c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3a83fdacf1f3d574fa6308b35fa6259c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1759227098
