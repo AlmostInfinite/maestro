@@ -368,7 +368,6 @@ MonoBehaviour:
   tileZ: 0
   HP: 0
   instrumentType: 0
-  moveSpeed: 3.9
 --- !u!114 &114757883095698242
 MonoBehaviour:
   m_ObjectHideFlags: 1

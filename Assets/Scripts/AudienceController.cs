@@ -13,16 +13,22 @@ public class AudienceController : MonoBehaviour {
             
             Vector3 seatPos = LevelMapper.instance.GetRandomSeatPos();
 
-            // Insert spawn particle effect here @ seatpos
+			Poof ();// Insert spawn particle effect here @ seatpos
             Instantiate(LevelMapper.instance.seatedUnitToSpawn, seatPos, LevelMapper.instance.seatedUnitToSpawn.transform.rotation);
+			Instantiate(GameManager.instance.poofPrefab, seatPos, LevelMapper.instance.seatedUnitToSpawn.transform.rotation);
 
-            // Insert spawn particle effect here @ transform.position
-            Destroy(transform.parent.gameObject);
+			Poof();// Insert spawn particle effect here @ transform.position
+			Destroy(transform.parent.gameObject);
 
 
         }
 
     }
+
+	void Poof()
+	{
+		Instantiate (GameManager.instance.poofPrefab,transform.position,transform.rotation);
+	}
 
     //TODO - Move to seat?? - destroy object?? - (move "pawn" from unit make unit spawn from a pos instead.)
 
