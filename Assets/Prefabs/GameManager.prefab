@@ -51,3 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fcb2533ac5ac654b8080848cc210fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedTowerType: 0
+  towerToPlace: {fileID: 0}
+  poofPrefab: {fileID: 1648742938907200, guid: ee26098da84f2431faa6b17e55f38b10, type: 2}
