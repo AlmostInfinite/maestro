@@ -2,7 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudienceController : MonoBehaviour {
+public class AudienceController : MonoBehaviour
+{
+
+    public Scoring ScoreScript;
+
+
+    void start ()
+    {
+        ScoreScript = GetComponent<Scoring>();
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -16,6 +25,7 @@ public class AudienceController : MonoBehaviour {
 			Poof ();// Insert spawn particle effect here @ seatpos
             Instantiate(LevelMapper.instance.seatedUnitToSpawn, seatPos, LevelMapper.instance.seatedUnitToSpawn.transform.rotation);
 			Instantiate(GameManager.instance.poofPrefab, seatPos, LevelMapper.instance.seatedUnitToSpawn.transform.rotation);
+            ScoreScript.playerScore++;
 
 			Poof();// Insert spawn particle effect here @ transform.position
 			Destroy(transform.parent.gameObject);

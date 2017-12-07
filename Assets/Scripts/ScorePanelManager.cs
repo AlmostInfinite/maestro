@@ -8,9 +8,9 @@ public class ScorePanelManager : MonoBehaviour
 
     //score script stuff up here
 
-    bool Onestar = false;
-    bool TwoStar = false;
-    bool ThreeStar = false;
+   public  bool Onestar = false;
+   public  bool TwoStar = false;
+   public bool ThreeStar = false;
 
     public GameObject PanelOne;
     public GameObject PanelTwo;

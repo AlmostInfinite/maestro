@@ -551,6 +551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 493c797a34a71e047a08ba0a833eb27a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Onestar: 0
+  TwoStar: 0
+  ThreeStar: 0
   PanelOne: {fileID: 1649806856}
   PanelTwo: {fileID: 0}
   PanelThree: {fileID: 0}

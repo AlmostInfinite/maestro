@@ -1540,7 +1540,7 @@ MonoBehaviour:
   isVacant: 1
   isNode: 0
   towerType: 1
-  bulletPrefab: {fileID: 54835601510697096, guid: 6cf11d5d2208f23489b532b4f0bf19e3,
+  bulletPrefab: {fileID: 54651031368233090, guid: e7ab21b6a887e3047bf2cabfa1cc32ba,
     type: 2}
 --- !u!114 &114593956980668818
 MonoBehaviour:
