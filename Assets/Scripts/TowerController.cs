@@ -36,9 +36,9 @@ public class TowerController : MonoBehaviour
     {
         //checked tower type, set bulletPrefab to approbraite prefab for that tower before shooting.
 
-        Rigidbody bulletClone = (Rigidbody)Instantiate(tower.bulletPrefab, bulletSpawn.position, transform.rotation, this.transform);
+		Rigidbody bulletClone = (Rigidbody)Instantiate(tower.bulletPrefab, bulletSpawn.position, transform.rotation, this.transform);
         bulletClone.velocity = bulletSpawn.forward * bulletSpeed;
-		Destroy (bulletClone.gameObject, 1.1f);
+		Destroy (bulletClone.gameObject, 1f);
     }
 
 }

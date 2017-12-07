@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385eca3d6624b3744a66d36b7c438fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetItem: {fileID: 0}
+  targetItem: {fileID: 1637611045740324, guid: 4bb1195e54dac654f9e445cbd961268f, type: 2}
   myLayerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -571,5 +571,5 @@ MonoBehaviour:
   isVacant: 1
   isNode: 0
   towerType: 0
-  bulletPrefab: {fileID: 54599911249944182, guid: 6b29700980ce96d4bade001f9bd53e47,
+  bulletPrefab: {fileID: 54828451722457146, guid: 4bb1195e54dac654f9e445cbd961268f,
     type: 2}

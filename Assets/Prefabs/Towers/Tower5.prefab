@@ -8397,5 +8397,5 @@ MonoBehaviour:
   isVacant: 1
   isNode: 0
   towerType: 4
-  bulletPrefab: {fileID: 54018370553639854, guid: 7464f3d23b92de347af5f6ee0fc1475c,
+  bulletPrefab: {fileID: 54883432114227176, guid: 2d3f5cf542b6d1b42ad3df703c26bcac,
     type: 2}
