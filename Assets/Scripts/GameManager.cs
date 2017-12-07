@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     //private LevelMapper levelMapper;
 
     public int selectedTowerType = 0;
-    public GameObject towerToPlace, poofPrefab;
+    public GameObject towerToPlace;
 
 
     //Awake is always called before any Start functions
@@ -56,9 +56,4 @@ public class GameManager : MonoBehaviour
         Debug.Log("Woot");
     }
 
-	public void Poof()
-	{
-		var smoke = GetComponent<ParticleSystem>();
-		smoke.Play ();
-	}
 }
