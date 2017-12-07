@@ -25,6 +25,8 @@ public class LevelMapper : MonoBehaviour
 
     public static LevelMapper instance = null;
 
+    public GameObject seatedUnitToSpawn;
+
     [HideInInspector]
     public GameObject spawnPosition, spawnUnit, backWall, leftWall, rightWall;
 

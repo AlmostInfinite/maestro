@@ -62,6 +62,9 @@ MonoBehaviour:
     instrumentColor: {r: 0.03448248, g: 0, b: 1, a: 1}
   - name: Keyboard
     instrumentColor: {r: 0, g: 0.91724133, b: 1, a: 1}
+  emptySeats: []
+  seatedUnitToSpawn: {fileID: 1276320415836804, guid: 95fab96ce61a33849a961cfea4121b66,
+    type: 2}
   spawnPosition: {fileID: 0}
   spawnUnit: {fileID: 0}
   backWall: {fileID: 1581439040911970, guid: 710ddcc6b54604d43b2d69793daffef5, type: 2}

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class AudienceController : MonoBehaviour {
 
-    public GameObject unitToSpawn;
-
-
     private void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Dead");
@@ -16,8 +13,10 @@ public class AudienceController : MonoBehaviour {
             
             Vector3 seatPos = LevelMapper.instance.GetRandomSeatPos();
 
-            Instantiate(unitToSpawn, seatPos, unitToSpawn.transform.rotation);
+            // Insert spawn particle effect here @ seatpos
+            Instantiate(LevelMapper.instance.seatedUnitToSpawn, seatPos, LevelMapper.instance.seatedUnitToSpawn.transform.rotation);
 
+            // Insert spawn particle effect here @ transform.position
             Destroy(transform.parent.gameObject);
 
 

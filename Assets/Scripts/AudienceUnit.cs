@@ -137,7 +137,12 @@ public class AudienceUnit : MonoBehaviour
 
     void FinshedPath()
     {
-        Destroy(gameObject); // TODO Make Better . End of path reached
+
+        // insert particle effect/animation here.
+        Animator anim = gameObject.GetComponent<Animator>();
+        anim.SetTrigger("Leave");
+        Destroy(gameObject, 0.833f);
+        //Destroy(gameObject); // TODO Make Better . End of path reached
     }
 
 }

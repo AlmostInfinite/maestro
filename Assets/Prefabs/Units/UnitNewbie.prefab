@@ -173,6 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4431002001898300}
   - component: {fileID: 114412002327583502}
+  - component: {fileID: 95297015083880134}
   m_Layer: 0
   m_Name: UnitNewbie
   m_TagString: Untagged
@@ -760,6 +761,23 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300006, guid: 178166f94d6f3f04c858299dec4ed139, type: 3}
+--- !u!95 &95297015083880134
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1702903751143828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b3b6bc18add49b4cbeeb8f22c1bf8dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114412002327583502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -787,8 +805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ff9762f60a2554cb5ace4e29f1ecda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitToSpawn: {fileID: 1276320415836804, guid: 95fab96ce61a33849a961cfea4121b66,
-    type: 2}
 --- !u!114 &114864818090274388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -800,4 +816,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ff9762f60a2554cb5ace4e29f1ecda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitToSpawn: {fileID: 0}
