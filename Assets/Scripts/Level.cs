@@ -43,27 +43,29 @@ public class Level : MonoBehaviour
     private void Start()
     {
 
-        // Calculates total map size including borders
-        CalculateMapSize();
+        //// Calculates total map size including borders
+        //CalculateMapSize();
 
-        // Create a Vector3 for the spawn point and store in the mapper
-        LevelMapper.instance.SetTileSource(tileSourceX, tileSourceZ);
+        //// Create a Vector3 for the spawn point and store in the mapper
+        //LevelMapper.instance.SetTileSource(tileSourceX, tileSourceZ);
 
-        // Generates the level map
-        GenerateMapData();
+        //// Generates the level map
+        //GenerateMapData();
 
-        // Hack
-        LevelMapper.instance.tilesref = tiles;
+        //// Hack
+        //LevelMapper.instance.tilesref = tiles;
 
-        // Instaniates the map tiles/towers in their locations
-        LevelMapper.instance.GenerateMapVisuals();
+        //// Instaniates the map tiles/towers in their locations
+        //LevelMapper.instance.GenerateMapVisuals();
 
-        // Create a graph(array) that converts tiles to nodes and stores their positions and a nodes neighbor positions.
-        LevelMapper.instance.GeneratePathfindingGraph();
+        //// Create a graph(array) that converts tiles to nodes and stores their positions and a nodes neighbor positions.
+        //LevelMapper.instance.GeneratePathfindingGraph();
 
-        // Generate a path from start to finish.
-        LevelMapper.instance.GeneratePathTo(tileTargetX, tileTargetZ);
+        //// Generate a path from start to finish.
+        //LevelMapper.instance.GeneratePathTo(tileTargetX, tileTargetZ);
 
+        //// Generate Seat List
+        //LevelMapper.instance.GenerateSeatMap();
 
     }
 

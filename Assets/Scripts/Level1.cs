@@ -32,7 +32,8 @@ public class Level1 : Level
         // Generate a path from start to finish.
         LevelMapper.instance.GeneratePathTo(tileTargetX, tileTargetZ);
 
-
+        // Generate Seat List
+        LevelMapper.instance.GenerateSeatMap();
     }
 
     private void CalculateMapSize()

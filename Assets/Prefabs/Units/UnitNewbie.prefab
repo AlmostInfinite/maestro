@@ -776,7 +776,6 @@ MonoBehaviour:
   tileZ: 0
   HP: 1
   instrumentType: 0
-  moveSpeed: 3.9
 --- !u!114 &114706408094727450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -788,6 +787,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ff9762f60a2554cb5ace4e29f1ecda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitToSpawn: {fileID: 1276320415836804, guid: 95fab96ce61a33849a961cfea4121b66,
+    type: 2}
 --- !u!114 &114864818090274388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -799,3 +800,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ff9762f60a2554cb5ace4e29f1ecda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitToSpawn: {fileID: 0}

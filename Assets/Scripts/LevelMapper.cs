@@ -20,7 +20,9 @@ public class LevelMapper : MonoBehaviour
     }
 
     public InstrumentTypeInfo[] instrumentTypes;
-    
+
+    public List<GameObject> emptySeats = new List<GameObject>();
+
     public static LevelMapper instance = null;
 
     [HideInInspector]
@@ -65,6 +67,13 @@ public class LevelMapper : MonoBehaviour
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject); // TODO Enable when change the menu
 
+
+    }
+
+
+    private void Start()
+    {
+        
     }
 
     private void Update()
@@ -163,6 +172,39 @@ public class LevelMapper : MonoBehaviour
         Instantiate(rightWall, new Vector3(((totalMapSizeX) - 0.5f), 5, (totalMapSizeZ / 2)), rightWall.transform.rotation, levelObject);
 
     }
+
+
+    public void GenerateSeatMap()
+    {
+
+        //if (emptySeats != null)
+        //{
+            emptySeats.Clear();
+            foreach (GameObject seat in GameObject.FindGameObjectsWithTag("Seat"))
+            {
+                emptySeats.Add(seat);
+            }
+        //}
+    }
+
+
+    public Vector3 GetRandomSeatPos()
+    {
+       // if (emptySeats.Count > 0)
+        //{
+         int rand = UnityEngine.Random.Range(0, emptySeats.Count);
+
+        Vector3 seatPos = emptySeats[rand].transform.position;
+
+        emptySeats.RemoveAt(rand);
+
+        return seatPos;
+
+        //}
+   
+       // return null;
+    }
+
 
     public void GeneratePathfindingGraph()
     {
