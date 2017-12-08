@@ -443,7 +443,7 @@ Prefab:
         type: 2}
       propertyPath: audioManager
       value: 
-      objectReference: {fileID: 1335922768842440, guid: 53598b5a7eef742fb917202675cdbe92,
+      objectReference: {fileID: 1074341245063466, guid: d861d5617dcff7a4592f7852047583bc,
         type: 2}
     m_RemovedComponents:
     - {fileID: 0}
@@ -564,9 +564,11 @@ MonoBehaviour:
   Onestar: 0
   TwoStar: 0
   ThreeStar: 0
-  PanelOne: {fileID: 1228541023}
-  PanelTwo: {fileID: 697741622}
-  PanelThree: {fileID: 1430490519}
+  endofLevel: 0
+  ImageOne: {fileID: 0}
+  ImageTwo: {fileID: 0}
+  ImageThree: {fileID: 0}
+  Panel: {fileID: 0}
 --- !u!1 &628840726
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,11 +794,6 @@ Prefab:
 --- !u!224 &697741621 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224611303730522798, guid: f9f952b8a035c864885c782ab567399e,
-    type: 2}
-  m_PrefabInternal: {fileID: 697741620}
---- !u!1 &697741622 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1369283056157176, guid: f9f952b8a035c864885c782ab567399e,
     type: 2}
   m_PrefabInternal: {fileID: 697741620}
 --- !u!1 &1015136173
@@ -1040,11 +1037,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224332312797854468, guid: c5f1fd6bc01c832499ffd5b02697cb63,
     type: 2}
   m_PrefabInternal: {fileID: 1228541021}
---- !u!1 &1228541023 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1352572017980302, guid: c5f1fd6bc01c832499ffd5b02697cb63,
-    type: 2}
-  m_PrefabInternal: {fileID: 1228541021}
 --- !u!1 &1396266032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,11 +1262,6 @@ Prefab:
 --- !u!224 &1430490518 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224766632449912646, guid: e5bf07ef9c0d74d42a29e2ed07ad8d89,
-    type: 2}
-  m_PrefabInternal: {fileID: 1430490517}
---- !u!1 &1430490519 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1467465170859854, guid: e5bf07ef9c0d74d42a29e2ed07ad8d89,
     type: 2}
   m_PrefabInternal: {fileID: 1430490517}
 --- !u!1001 &1640567105

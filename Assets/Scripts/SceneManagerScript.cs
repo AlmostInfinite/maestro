@@ -11,6 +11,7 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene(LeveltoLoad);
 
         AudioManager.instance.musicSource.Stop();
+		AudioManager.instance.SetMusic(LeveltoLoad);
 
     }
 

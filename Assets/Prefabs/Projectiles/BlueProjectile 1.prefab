@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4686091445886504}
   - component: {fileID: 54651031368233090}
   - component: {fileID: 114223118744138914}
+  - component: {fileID: 65014433667161764}
   m_Layer: 0
   m_Name: BlueProjectile 1
   m_TagString: Untagged
@@ -54,7 +55,7 @@ GameObject:
   - component: {fileID: 33361143211825114}
   - component: {fileID: 23244425693211780}
   - component: {fileID: 122561023306921918}
-  - component: {fileID: 64950398156037990}
+  - component: {fileID: 65223496722170680}
   m_Layer: 0
   m_Name: Soundwave
   m_TagString: Untagged
@@ -73,7 +74,6 @@ GameObject:
   - component: {fileID: 33754984075071710}
   - component: {fileID: 23277017891856946}
   - component: {fileID: 122001781431473490}
-  - component: {fileID: 64067650422400572}
   m_Layer: 0
   m_Name: Soundwave2
   m_TagString: Untagged
@@ -148,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376435447224506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.189, y: 0, z: 0}
+  m_LocalPosition: {x: 15.959231, y: -2.5042696, z: 14.352638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4154971209834532}
@@ -300,34 +300,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64067650422400572
-MeshCollider:
+--- !u!65 &65014433667161764
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1589226806584086}
+  m_GameObject: {fileID: 1376435447224506}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: 29bb4c3d724cf074da0dc8a800c37c6e, type: 3}
---- !u!64 &64950398156037990
-MeshCollider:
+  m_Size: {x: 1.3127012, y: 1.4416097, z: 0.61706734}
+  m_Center: {x: -0.015787601, y: -0.024718106, z: -0.20973969}
+--- !u!65 &65223496722170680
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1443776484134684}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 29bb4c3d724cf074da0dc8a800c37c6e, type: 3}
+  m_Size: {x: 0.116677575, y: 0.016781282, z: 0.27047682}
+  m_Center: {x: -0.041346274, y: 0.00020086477, z: 0.12523894}
 --- !u!114 &114223118744138914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -339,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568529b2f2873654abf9fdf3cffe4e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileType: 2
+  projectileType: 3
 --- !u!122 &122001781431473490
 Halo:
   m_ObjectHideFlags: 1

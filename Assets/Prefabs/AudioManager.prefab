@@ -215,3 +215,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectsSource: {fileID: 82036412106078486}
   musicSource: {fileID: 82845174443663072}
+  Level1: {fileID: 8300000, guid: feec0a3fc3eaced438510331d500c506, type: 3}
+  Level2: {fileID: 8300000, guid: aeecc63d8e76542febf2245927eac32c, type: 3}
+  Level3: {fileID: 8300000, guid: 33ae1788b9e684693a0fb67a4cfbffb2, type: 3}

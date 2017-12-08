@@ -14,6 +14,9 @@ public class AudioManager : MonoBehaviour {
     public AudioSource musicSource;
     public static AudioManager instance = null;     //Allows other scripts to call functions from SoundManager. 
 
+	public List<AudioClip> Songs; //Songs used for each level. Songs are assigned on the prefab.
+
+
     void Awake()
     {
         //Check if there is already an instance of SoundManager
@@ -26,7 +29,21 @@ public class AudioManager : MonoBehaviour {
             Destroy(gameObject);
 
         //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
+
+	public void SetMusic(string level) 
+	{
+		foreach (AudioClip clip in Songs) 
+		{
+			if (level == clip.name) 
+			{
+				musicSource.clip = clip;
+
+			}
+		}
+		//musicSource.clip = (level);
+		//musicSource.Play ();
+	}
 
 }
