@@ -11,45 +11,63 @@ public class ScorePanelManager : MonoBehaviour
    public  bool Onestar = false;
    public  bool TwoStar = false;
    public bool ThreeStar = false;
+   public bool endofLevel = false;
 
-    public GameObject PanelOne;
-    public GameObject PanelTwo;
-    public GameObject PanelThree;
+    
 
-	
-	// Update is called once per frame
-	void Update ()
+    public GameObject ImageOne;
+    public GameObject ImageTwo;
+    public GameObject ImageThree;
+    public GameObject Panel;
+
+
+    private void Start()
     {
-		if (Onestar)
-        {
-            ShowPanelOne();
-        }
+       
+    }
 
-        if (TwoStar)
+    // Update is called once per frame
+    void Update ()
+    {
+        if (endofLevel)
         {
-            ShowPanelTwo();
-        }
+            if (Onestar)
+            {
+                ShowPanelOne();
+            }
 
-        if (ThreeStar)
-        {
-            ShowPanelThree();
+            else if (TwoStar)
+            {
+                ShowPanelTwo();
+            }
+
+           else if (ThreeStar)
+            {
+                ShowPanelThree();
+            }
         }
 	}
 
 
     public void ShowPanelOne ()
     {
-        PanelOne.SetActive(true);
+        Panel.SetActive(true);
+        ImageOne.SetActive(true);
     }
 
     public void ShowPanelTwo()
-    {  
-        PanelTwo.SetActive(true);
+    {
+        Panel.SetActive(true);
+        ImageOne.SetActive(true);
+        ImageTwo.SetActive(true);
     }
 
     public void ShowPanelThree()
     {
-        PanelThree.SetActive(true);
+        Panel.SetActive(true);
+        ImageOne.SetActive(true);
+        ImageTwo.SetActive(true);
+        ImageThree.SetActive(true);
     }
 
     public void ReturnToMenu(string LevelToLoad)

@@ -39,6 +39,7 @@ public class AudienceSpawner : MonoBehaviour
 
     public bool spawnEnabled;
     public float timeBetweenWaves;
+    public ScorePanelManager Panel;
 
     private float waitTimeForWave;
     private bool spawning = false;
@@ -54,6 +55,7 @@ public class AudienceSpawner : MonoBehaviour
 
         waitTimeForWave = 3;
 
+        Panel = GetComponent<ScorePanelManager>();
 
 
     }
@@ -119,9 +121,10 @@ public class AudienceSpawner : MonoBehaviour
         {
             currentWave++;
         }
-
+ 
         Debug.Log("Spawning Finished");
-
+        Panel.endofLevel = true;
+        Debug.Log("Panel Active");
         spawning = false;
 
     }

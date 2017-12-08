@@ -26,6 +26,7 @@ public class AudienceController : MonoBehaviour
             Instantiate(LevelMapper.instance.seatedUnitToSpawn, seatPos, LevelMapper.instance.seatedUnitToSpawn.transform.rotation);
 			Instantiate(GameManager.instance.poofPrefab, seatPos, LevelMapper.instance.seatedUnitToSpawn.transform.rotation);
             ScoreScript.playerScore++;
+            Debug.Log("score");
 
 			Poof();// Insert spawn particle effect here @ transform.position
 			Destroy(transform.parent.gameObject);
