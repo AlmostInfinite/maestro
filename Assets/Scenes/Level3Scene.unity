@@ -439,6 +439,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114368710903516966, guid: 3ebf264dffe866b4fae70df759813e4c,
+        type: 2}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1053449592341392, guid: d2af055768fc04d5ebac34ef0ae7f7bb,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -555,6 +561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 493c797a34a71e047a08ba0a833eb27a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Onestar: 0
+  TwoStar: 0
+  ThreeStar: 0
   PanelOne: {fileID: 734784914}
   PanelTwo: {fileID: 2122517349}
   PanelThree: {fileID: 1861355477}
