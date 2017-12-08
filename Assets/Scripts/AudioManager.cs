@@ -6,7 +6,8 @@ using UnityEngine;
 /// 
 /// </summary>
 
-public class AudioManager : MonoBehaviour {
+public class AudioManager : MonoBehaviour
+{
 
     // TODO - Stores music and sounds details - Handles music and sound playback.
 
@@ -14,7 +15,7 @@ public class AudioManager : MonoBehaviour {
     public AudioSource musicSource;
     public static AudioManager instance = null;     //Allows other scripts to call functions from SoundManager. 
 
-	public List<AudioClip> Songs; //Songs used for each level. Songs are assigned on the prefab.
+    public List<AudioClip> Songs; //Songs used for each level. Songs are assigned on the prefab.
 
 
     void Awake()
@@ -32,18 +33,10 @@ public class AudioManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-	public void SetMusic(string level) 
-	{
-		foreach (AudioClip clip in Songs) 
-		{
-			if (level == clip.name) 
-			{
-				musicSource.clip = clip;
+    public void SetMusic(AudioClip clip)
+    {
+        musicSource.clip = clip;
 
-			}
-		}
-		//musicSource.clip = (level);
-		//musicSource.Play ();
-	}
+    }
 
 }

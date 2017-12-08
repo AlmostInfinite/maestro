@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33349891832524460}
   - component: {fileID: 23532923279626044}
   - component: {fileID: 122267085846974018}
-  - component: {fileID: 64682628617405470}
+  - component: {fileID: 114069823312792604}
   m_Layer: 0
   m_Name: Soundwave
   m_TagString: Untagged
@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 33991037250695760}
   - component: {fileID: 23102742335335856}
   - component: {fileID: 122137022585041620}
-  - component: {fileID: 64878256418458026}
   m_Layer: 0
   m_Name: Soundwave2
   m_TagString: Untagged
@@ -58,7 +57,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4132350244534434}
   - component: {fileID: 54154844504158608}
-  - component: {fileID: 114334212977010304}
+  - component: {fileID: 65130373682246954}
+  - component: {fileID: 114606545685488708}
   m_Layer: 0
   m_Name: CyanProjectile
   m_TagString: Untagged
@@ -300,35 +300,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64682628617405470
-MeshCollider:
+--- !u!65 &65130373682246954
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360682558100522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1466074, y: 0.12142038, z: 0.5707674}
+  m_Center: {x: -0.013232708, y: 0.6273556, z: -0.16720057}
+--- !u!114 &114069823312792604
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1009415662490286}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 29bb4c3d724cf074da0dc8a800c37c6e, type: 3}
---- !u!64 &64878256418458026
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1240588530975534}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: 29bb4c3d724cf074da0dc8a800c37c6e, type: 3}
---- !u!114 &114334212977010304
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568529b2f2873654abf9fdf3cffe4e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileType: 4
+--- !u!114 &114606545685488708
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

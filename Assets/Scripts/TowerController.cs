@@ -38,7 +38,7 @@ public class TowerController : MonoBehaviour
 
 		Rigidbody bulletClone = (Rigidbody)Instantiate(tower.bulletPrefab, bulletSpawn.position, transform.rotation, this.transform);
         bulletClone.velocity = bulletSpawn.forward * bulletSpeed;
-		Destroy (bulletClone.gameObject, 1f);
+		Destroy (bulletClone.gameObject, 1.2f);
     }
 
 }

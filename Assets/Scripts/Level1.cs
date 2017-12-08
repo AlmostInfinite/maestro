@@ -5,7 +5,7 @@ using UnityEngine;
 public class Level1 : Level
 {
     // TODO - loads/saves level layout - save map variables to a file and load on init.
-
+ 
 
 
     private void Start()
@@ -34,6 +34,10 @@ public class Level1 : Level
 
         // Generate Seat List
         LevelMapper.instance.GenerateSeatMap();
+
+        GameManager.instance.playerScore = 0;
+
+        AudioManager.instance.SetMusic(levelClip);
     }
 
     private void CalculateMapSize()

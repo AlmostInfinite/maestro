@@ -194,7 +194,7 @@ public class LevelMapper : MonoBehaviour
     {
        // if (emptySeats.Count > 0)
         //{
-         int rand = UnityEngine.Random.Range(0, emptySeats.Count);
+        int rand = UnityEngine.Random.Range(0, emptySeats.Count);
 
         Vector3 seatPos = emptySeats[rand].transform.position;
 

@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public int selectedTowerType = 0;
     public GameObject towerToPlace, poofPrefab;
 
+    public int playerScore;
+    public ScorePanelManager panel;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -51,9 +53,22 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void Test()
+    public void DisplayScore()
     {
-        Debug.Log("Woot");
+        if (playerScore <= 20)
+        {
+            panel.Onestar = true;
+        }
+
+        if (playerScore <= 35)
+        {
+            panel.TwoStar = true;
+        }
+
+        if (playerScore <= 50)
+        {
+            panel.ThreeStar = true;
+        }
     }
 
 	public void Poof()

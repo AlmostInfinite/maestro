@@ -38,7 +38,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4320349298641970}
   - component: {fileID: 54405048057692554}
-  - component: {fileID: 114416489813554394}
+  - component: {fileID: 65823044946966550}
+  - component: {fileID: 114144919092772436}
   m_Layer: 0
   m_Name: RedProjectile
   m_TagString: Untagged
@@ -57,7 +58,6 @@ GameObject:
   - component: {fileID: 33201559392676594}
   - component: {fileID: 23813595057799942}
   - component: {fileID: 122530139870978626}
-  - component: {fileID: 64549248397166400}
   m_Layer: 0
   m_Name: Soundwave2
   m_TagString: Untagged
@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 33405172709785656}
   - component: {fileID: 23151454329481898}
   - component: {fileID: 122649307280230902}
-  - component: {fileID: 64373127687683616}
   m_Layer: 0
   m_Name: Soundwave
   m_TagString: Untagged
@@ -300,35 +299,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64373127687683616
-MeshCollider:
+--- !u!65 &65823044946966550
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1349724820249054}
+  m_GameObject: {fileID: 1038079254582056}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 29bb4c3d724cf074da0dc8a800c37c6e, type: 3}
---- !u!64 &64549248397166400
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1133729847930230}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: 29bb4c3d724cf074da0dc8a800c37c6e, type: 3}
---- !u!114 &114416489813554394
+  m_Size: {x: 1.1466074, y: 0.12142038, z: 0.5707674}
+  m_Center: {x: -0.013232708, y: 0.6273556, z: -0.16720057}
+--- !u!114 &114144919092772436
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

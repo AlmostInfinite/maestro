@@ -32,6 +32,13 @@ public class Level2 : Level
         // Generate a path from start to finish.
         LevelMapper.instance.GeneratePathTo(tileTargetX, tileTargetZ);
 
+        LevelMapper.instance.GenerateSeatMap();
+
+        GameManager.instance.playerScore = 0;
+
+
+
+        AudioManager.instance.SetMusic(levelClip);
 
     }
 

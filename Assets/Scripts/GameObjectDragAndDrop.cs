@@ -50,7 +50,6 @@ public class GameObjectDragAndDrop : MonoBehaviour {
                 {
                     targetItem = null;
                 }
-                print(targetItem);
             }
 
             yield return new WaitForEndOfFrame();

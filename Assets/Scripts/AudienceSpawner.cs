@@ -14,7 +14,6 @@ public class AudienceSpawner : MonoBehaviour
    public Animator conductorAnimator;
 
     public GameObject unitToSpawn;
-    //public LevelMapper levelMapper;
 
     [System.Serializable]
     public class UnitWaveInfo
@@ -115,7 +114,8 @@ public class AudienceSpawner : MonoBehaviour
         // TODO END OF LEVEL
         if (currentWave >= (waves.Length - 1))
         {
-            currentWave = (waves.Length - 1);
+            spawnEnabled = false;
+            //currentWave = (waves.Length - 1);
         }
         else
         {
